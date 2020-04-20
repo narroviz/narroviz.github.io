@@ -886,7 +886,9 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   flex-wrap: wrap;
 }
 .slider-text {
-  justify-content: top;
+  margin: auto;
+  display: block;
+  text-align: center;
   position: absolute;
   width: 100%;
   top: 1rem;
