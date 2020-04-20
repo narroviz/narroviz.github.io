@@ -886,12 +886,18 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   flex-wrap: wrap;
 }
 .slider-text {
-  margin: auto;
-  display: block;
+  display:flex;
+  flex-flow:column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  margin: auto;
+  
   position: absolute;
+  margin: auto;
   width: 100%;
-  top: 1rem;
+  height: 350px;
+  /*top: 1rem;*/
   pointer-events: none;
   left: 0;
   right: 0;
@@ -899,12 +905,12 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   color: #fff;
 }
   .slider-text h1 {
-    font-size: 120px;
+    font-size:  min(10vw, 120px);
     font-weight: 100;
-    /*margin: 0;*/
+    margin: 0;
   }
   .slider-text h2 {
-    font-size: 55px;
+    font-size: min(5vw, 55px);
     line-height: 1.2;
     font-weight: 300;
     margin: 0;
