@@ -9,9 +9,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/homepage.css">
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/homepage.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css" integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
         <!-- <link rel="stylesheet" href="assets/fonts/fork-awesome/css/fork-awesome.min.css"> -->
 
@@ -51,8 +50,15 @@
             href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff'>
         <link rel='preload' type='font/woff' as='font' crossorigin
             href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff'>
-        <link rel='preload' type='font/woff2' as='font' crossorigin
+        <link rel='preload' type='font/woff' as='font' crossorigin
+            href='http://wanderwhim.com/assets/fonts/raleway/raleway-light.woff'>
+        <link rel='preload' type='font/woff' as='font' crossorigin
+            href='http://wanderwhim.com/assets/fonts/raleway/raleway-medium.woff'>
+        <link rel='preload' type='font/woff' as='font' crossorigin
+            href='http://wanderwhim.com/assets/fonts/raleway/raleway-heavy.woff'>
+<!--         <link rel='preload' type='font/woff2' as='font' crossorigin
             href='http://wanderwhim.com/assets/fonts/raleway-v14-latin/raleway-v14-latin-regular.woff2'>
+ -->
 
         <style>
             /*
@@ -63,10 +69,26 @@
         
             @font-face {
                 font-family: 'Raleway';
-                src: url('http://wanderwhim.com/assets/fonts/raleway-v14-latin/raleway-v14-latin-regular.eot'),
-                url('http://wanderwhim.com/assets/fonts/raleway-v14-latin/raleway-v14-latin-regular.eot?#iefix') format('embedded-opentype'),
-                url('http://wanderwhim.com/assets/fonts/raleway-v14-latinraleway-v14-latin-regular.svg#Raleway') format('svg');
+                src: url('http://wanderwhim.com/assets/fonts/raleway/raleway-light.woff'),  /* Modern Browsers */
                 font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Raleway';
+                src: url('http://wanderwhim.com/assets/fonts/raleway/raleway-medium.woff'),  /* Modern Browsers */
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Raleway';
+                src: url('http://wanderwhim.com/assets/fonts/raleway/raleway-heavy.woff'),  /* Modern Browsers */
+                font-weight: 700;
                 font-style: normal;
                 font-stretch: normal;
                 font-display: swap;
