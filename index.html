@@ -119,11 +119,8 @@
         </style>
          
     </head>
-<body>
-
-<a href='#content' class='skip-to-main'>Skip to main content</a>
-    
-    <div class="header-container">
+<body>    
+    <div class="header-container" id="header-container">
         <header class='is-sticky'>
             <div class='header__menu tk-national'>
                         <p class='menu__tagline'><a href='http://wanderwhim.com' target='_blank'>Wanderwhim</a> is a creative visualization space built to explore unique datasets, topics, questions and ideas.</p>
@@ -134,9 +131,9 @@
                         </ul>
                         <img src="assets/images/wanderwhim-official-inverse.png" class="bottom-logo">
                     </div>
-                    <button class='header__toggle'>
-                        <span><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
-                        <span><svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
+                    <button class='header__toggle' id="toggle">
+                        <span><svg width="36" height="36" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></span>
+                        <span><svg width="36" height="36" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></span>
                     </button> 
         </header>
 
@@ -160,10 +157,8 @@
             <div class="article-row">
                 <div class="col-md-4">
                     <a href="html/wnba-season-history.html">
-                        <div class="article-item">
-                            <div class="image">
+                        <div class="left-image article-item">
                                 <img src="assets/images/wnba_season_paths.png">
-                            </div>
                             <h1>WNBA<em>&nbsp;Season History</em></h1>
                             <p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -171,10 +166,8 @@
                 </div>
                 <div class="col-md-4">
                     <a href="http://wanderwhim.com">
-                        <div class="article-item">
-                            <div class="image">
-                                <img src="assets/images/wnba_recordigami.png">
-                            </div>
+                        <div class="middle-image article-item">
+                            <img src="assets/images/wnba_recordigami.png">
                             <h1>WNBA<em>&nbsp;Recordigami</em></h1>
                             <p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -182,10 +175,8 @@
                 </div>
                 <div class="col-md-4">
                     <a href="http://wanderwhim.com">
-                        <div class="article-item">
-                            <div class="image">
-                                <img src="assets/images/wnba_random_walk.png">
-                            </div>
+                        <div class="right-image article-item">
+                            <img src="assets/images/wnba_random_walk.png">
                             <h1>WNBA<em>&nbsp;Random Walk</em></h1>
     						<p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -195,10 +186,8 @@
             <div class="article-row">
                 <div class="col-md-4">
                     <a href="http://wanderwhim.com">
-                        <div class="article-item">
-                            <div class="image">
+                        <div class="left-image article-item">
                                 <img src="assets/images/wnba_season_paths.png">
-                            </div>
                             <h1>NBA<em>&nbsp;Season History</em></h1>
                             <p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -206,10 +195,8 @@
                 </div>
                 <div class="col-md-4">
                     <a href="http://wanderwhim.com">
-                        <div class="article-item">
-                            <div class="image">
+                        <div class="middle-image article-item">
                                 <img src="assets/images/wnba_recordigami.png">
-                            </div>
                             <h1>NBA<em>&nbsp;Recordigami</em></h1>
                             <p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -217,10 +204,8 @@
                 </div>
                 <div class="col-md-4">
                 	<a href="http://wanderwhim.com">
-                        <div class="article-item">
-                            <div class="image">
+                        <div class="right-image article-item">
                                 <img src="assets/images/wnba_random_walk.png">
-                            </div>
                             <h1>NBA<em>&nbsp;Random Walk</em></h1>
                             <p>Awesome Subtitle Goes Here</p>
                         </div>
@@ -254,24 +239,24 @@
           <!-- <div class="col-lg-2 col-sm-3"></div> -->
           <!-- Twitter -->
           <a href="https://twitter.com/wanderwhimdata" class="col-md-3 logo-container">
-            <i class="fa fa-twitter fa-2x logo" aria-hidden="true"></i>
+            <i class="fa fa-twitter fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Twitter</h4>
           </a>
 
           <!-- Facebook -->
           <a href="https://www.facebook.com/wanderwhimdata/" class="col-md-3 logo-container">
-            <i class="fa fa-facebook fa-2x logo" aria-hidden="true"></i>
+            <i class="fa fa-facebook fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Facebook</h4>
           </a>
           <!-- Instagram -->
           <a href="https://instagram.com/wanderwhimdata/" class="col-md-3 logo-container">
-            <i class="fa fa-instagram fa-2x logo" aria-hidden="true"></i>
+            <i class="fa fa-instagram fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Instagram</h4>
           </a>
 
           <!-- Patreon -->
           <a href="https://www.patreon.com/wanderwhim" class="col-md-3 logo-container">
-            <i class="fa fa-patreon fa-2x logo" aria-hidden="true"></i>
+            <i class="fa fa-patreon fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Patreon</h4>
           </a>
         </div>
