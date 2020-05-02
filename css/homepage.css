@@ -503,7 +503,7 @@ body, html {
 }
 
 
-/*#11ded9 0%, #05e646 */
+/*#11ded9 30%, #05e646 */
 .left-image img:hover {
     -webkit-box-shadow: 0 0 7px 2px #11ded9;
           box-shadow: 0 0 7px 2px #11ded9;
@@ -874,12 +874,12 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
     bottom: 10;
     content: '';
     opacity: 1;
-    background: -moz-linear-gradient(45deg, #11ded9 0%, #11ded9 100%);
+    background: -moz-linear-gradient(135deg, #11ded9 30%, #11ded9 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #11ded9), color-stop(100%, #05e646));
-    background: -webkit-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: -o-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: -ms-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: linear-gradient(45deg, #11ded9 0%, #05e646 100%);
+    background: -webkit-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: -o-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: -ms-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: linear-gradient(135deg, #11ded9 30%, #05e646 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11ded9', endColorstr='#05e646', GradientType=1 ); }
 
 #particles-js {
@@ -966,12 +966,12 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
     content: '';
     opacity: 1;
     /*background: #ee76ad;*/
-    background: -moz-linear-gradient(45deg, #11ded9 0%, #11ded9 100%);
+    background: -moz-linear-gradient(135deg, #11ded9 30%, #11ded9 100%);
     background: -webkit-gradient(left bottom, right top, color-stop(0%, #11ded9), color-stop(100%, #05e646));
-    background: -webkit-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: -o-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: -ms-linear-gradient(45deg, #11ded9 0%, #05e646 100%);
-    background: linear-gradient(45deg, #11ded9 0%, #05e646 100%);
+    background: -webkit-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: -o-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: -ms-linear-gradient(135deg, #11ded9 30%, #05e646 100%);
+    background: linear-gradient(135deg, #11ded9 30%, #05e646 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11ded9', endColorstr='#05e646', GradientType=1 );
 }
 .footer {

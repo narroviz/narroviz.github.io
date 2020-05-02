@@ -1,8 +1,9 @@
 // ParticlesJS Config.
 particlesJS("particles-js", {
   "particles": {
+    "fps_limit": 40,
     "number": {
-      "value": 150,
+      "value": 50,
       "density": {
         "enable": true,
         "value_area": 700
@@ -12,7 +13,7 @@ particlesJS("particles-js", {
       "value": "#ffffff"
     },
     "shape": {
-      "type": "polygon",
+      "type": "circle",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -22,30 +23,30 @@ particlesJS("particles-js", {
       }
     },
     "opacity": {
-      "value": 0.5,
+      "value": 0.7,
       "random": false,
       "anim": {
         "enable": false,
         "speed": 1,
-        "opacity_min": 0.1,
+        "opacity_min": 0.2,
         "sync": false
       }
     },
     "size": {
-      "value": 3,
+      "value": 5,
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
+        "speed": 100,
+        "size_min": 1,
         "sync": false
       }
     },
     "line_linked": {
       "enable": true,
-      "distance": 100,
+      "distance": 140,
       "color": "#fff",
-      "opacity": 0.5,
+      "opacity": 1,
       "width": 1
     },
     "move": {
@@ -78,7 +79,7 @@ particlesJS("particles-js", {
     },
     "modes": {
       "grab": {
-        "distance": 140,
+        "distance": 200,
         "line_linked": {
           "opacity": 1
         }
