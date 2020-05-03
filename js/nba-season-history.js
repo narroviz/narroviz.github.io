@@ -8828,13 +8828,11 @@ function _drawSeasonHistory() {
               }
 
               if (clickedId === "toggle-num-games" && yAccessor !== winAccessor) {
-                console.log('num');
                 yAccessor = winAccessor;
                 updateSeasonHistoryByMetric(yAccessor, [0, NUM_GAMES + 1], bounds, dimensions);
               }
 
               if (clickedId === "toggle-win-pct" && yAccessor !== winPctAccessor) {
-                console.log("pct");
                 yAccessor = winPctAccessor;
                 updateSeasonHistoryByMetric(yAccessor, [0, 1], bounds, dimensions);
               }
@@ -8904,10 +8902,8 @@ function updateSeasonHistoryByMetric(yAccessor, yDomain, bounds, dimensions) {
   }).y(function (d) {
     return yScale(d.num_games);
   }).curve(d3.curveStep);
-  console.log(yDomain, NUM_GAMES + 1);
 
   if (yDomain[1] === NUM_GAMES + 1) {
-    console.log('here');
     bounds.selectAll(".num-games-gridlines").attr("opacity", 1).attr("y", function (d) {
       return yScale(d);
     });
@@ -8968,7 +8964,6 @@ function _drawSeasonHistoryByMetric() {
                   hideEraPaths(SEASON_HISTORY[index + 1]);
                 }
               } else if (index === 130) {
-                console.log("last", stage);
 
                 if (stage === "enter") {
                   for (var i = 0; i <= 12; i++) {
@@ -9048,8 +9043,6 @@ function _drawSeasonHistoryByMetric() {
             }).y(function (d) {
               return yScale(d.num_games);
             }).curve(d3.curveStep);
-            console.log("numGames");
-            console.log(numGames);
             numGamesByYear = bounds.append("path").datum(numGames).attr("class", "num-games-year-path").attr("d", function (d) {
               return numGamesLineGenerator(d);
             }).attr("fill", "none").attr("stroke-dasharray", "5,5").attr("stroke", "#a5a5a5").attr("stroke-width", 1).attr("opacity", 0);
@@ -9062,7 +9055,6 @@ function _drawSeasonHistoryByMetric() {
             winPctLabels = bounds.selectAll(".win-pct-label").data(winPctLineBreaks).enter().append("text").attr("class", "win-pct-label").attr("x", -10).attr("y", function (d) {
               return yScale(Math.round(d * 10) / 10);
             }).text(function (d) {
-              console.log(d);
               return Math.round(d * 10) / 10;
             }).attr("font-size", 12).attr("font-weight", "bold").attr("text-anchor", "end").attr("fill", "#b5b5b5");
             seasonLineGenerator = d3.line().x(function (d) {
@@ -9376,7 +9368,6 @@ function _drawSeasonHistoryByMetric() {
               offset: 0.5,
               enter: function enter(el) {
                 var index = +d3.select(el).attr('data-index');
-                console.log(index);
                 updateChart(index, teamData, "enter", league);
               },
               exit: function exit(el) {
@@ -9538,7 +9529,6 @@ function drawHistoricalArea(team, startYear, endYear, teamWinLossData, teamData,
   var areaExists = d3.select("#".concat(areaId)).nodes().length > 0;
 
   if (team === 'San Francisco Warriors') {
-    console.log(teamWinLossData);
     var glueSeason = [{
       "win": 49,
       "loss": 31,
@@ -9554,7 +9544,6 @@ function drawHistoricalArea(team, startYear, endYear, teamWinLossData, teamData,
       "win_pct": 0.5,
       "year": 1965
     };
-    console.log(teamWinLossData);
   }
 
   if (team === 'Cleveland Cavaliers' || team === 'Los Angeles Lakers') {
@@ -9624,7 +9613,6 @@ function drawChampionships(id, pathId, filterTeam, teamWinLossData, teamData, bo
 
   if (championshipsExist) {
     if (!starsExist) {
-      console.log(teamChampionshipWinLossData);
       teamChampionshipStars = bounds.selectAll("*[id=".concat(id, "-star-]")).data(teamChampionshipWinLossData).enter().append("g").attr("class", "championship-star").attr("id", function (d, i) {
         return "".concat(id, "-star-").concat(i);
       }).attr("transform", function (d) {
@@ -9637,7 +9625,6 @@ function drawChampionships(id, pathId, filterTeam, teamWinLossData, teamData, bo
         return d3.symbol().type(d3.symbolStar).size(STAR_SIZE)();
       }).attr("stroke", secondaryColor).style("fill", primaryColor).attr("stroke-width", 1.5).style("opacity", 0);
       teamChampionshipStars.transition().duration(1000).style("opacity", 1);
-      console.log(teamChampionshipStars);
     } else {
       teamChampionshipStars = d3.selectAll("*[id=".concat(id, "-star-]"));
       teamChampionshipStars.transition().duration(1000).style("fill", primaryColor);
@@ -9721,7 +9708,6 @@ function animateLine(lineId) {
   var lineIdString = "#".concat(lineId);
   var totalLength = d3.select(lineIdString).node().getTotalLength();
   d3.select(lineIdString).style("opacity", 1).style("stroke-width", 2);
-  console.log(d3.selectAll(lineIdString));
   d3.selectAll(lineIdString) // Set the line pattern to be an long line followed by an equally long gap
   .attr("stroke-dasharray", totalLength + " " + totalLength) // Set the intial starting position so that only the gap is shown by offesetting by the total length of the line
   .attr("stroke-dashoffset", totalLength) // Then the following lines transition the line so that the gap is hidden...
