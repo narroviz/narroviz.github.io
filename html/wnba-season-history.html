@@ -1,8 +1,10 @@
 <!doctype html>
-<html lang='en' data-version='1587147347691'>
+<html lang='en' data-version='1588533462693'>
 
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://unpkg.com/enter-view"></script>
+
 	<title>WNBA League History</title>
 	<meta charset='utf-8'>
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
@@ -35,89 +37,80 @@
 	<link rel='icon' type='image/png' sizes='16x16' href='./../assets/images/favicon-inverse.png'>
 	<meta name='msapplication-TileColor' content='#ffc40d'>
 	<meta name='theme-color' content='#ffffff'>
-	<link rel='preload' type='font/woff' as='font' crossorigin
-		href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff'>
-	<link rel='preload' type='font/woff' as='font' crossorigin
-		href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff'>
-	<link rel='preload' type='font/woff' as='font' crossorigin
-		href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff'>
-    <link rel='preload' type='font/woff' as='font' crossorigin
-        href='http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff'>
-    <link rel='preload' type='font/woff' as='font' crossorigin
-        href='http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff'>
-    <link rel='preload' type='font/woff' as='font' crossorigin
-        href='http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff'>
-    
-    <link rel="stylesheet" href="./../css/wnba-season-history.css">
-	<!-- <style>*{-webkit-box-sizing:border-box;box-sizing:border-box}html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section{display:block}a img{border:none}blockquote{quotes:none}blockquote:before,blockquote:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}.xxx-small{font-size:10px;line-height:1.65}.xx-small{font-size:11px;line-height:1.65}.x-small{font-size:12px;line-height:1.65}.small{font-size:14px;line-height:1.65}.root{font-size:16px;line-height:1.65}.medium{font-size:18px;line-height:1.65}.large{font-size:20px;line-height:1.5}.x-large{font-size:24px;line-height:1.4}.xx-large{font-size:32px;line-height:1.4}.xxx-large{font-size:40px;line-height:1.4}.xxxx-large{font-size:48px;line-height:1.2}.xxxxx-large{font-size:64px;line-height:1.2}.hide-accessible{width:1px;height:1px;overflow:hidden;position:absolute}.hide-invisible{visibility:hidden}.hide-display{display:none}.skip-to-main{border:none;width:1px;height:1px;overflow:hidden;position:absolute}.skip-to-main:focus{width:auto;height:auto;background-color:#f4f4f4;padding:.5rem;z-index:1000}.prose{max-width:40rem;margin:0 auto;padding:0 1rem}.media-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyNpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChNYWNpbnRvc2gpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkRDMDBGQ0Y5NEI4NjExRTM5RTg2QTY1RTUyQjIxNEQyIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkRDMDBGQ0ZBNEI4NjExRTM5RTg2QTY1RTUyQjIxNEQyIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6REMwMEZDRjc0Qjg2MTFFMzlFODZBNjVFNTJCMjE0RDIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6REMwMEZDRjg0Qjg2MTFFMzlFODZBNjVFNTJCMjE0RDIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6C0EmkAAAAGElEQVR42mJiYGD4DwQMTECCEchhAAgwAEcGBv9dngKPAAAAAElFTkSuQmCC")}#starter-guide{max-width:40rem;margin:0 auto}body{-webkit-font-feature-settings:'kern' 1,'onum' 0,'liga' 0,'tnum' 1;font-feature-settings:'kern' 1,'onum' 0,'liga' 0,'tnum' 1;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:rgba(0,0,0,0);background-color:#fff;color:#282828;font-weight:400;font-family:'Raleway';font-size:16px}@media only screen and (min-width:30em){body{font-size:18px}}h1{font-size:32px;line-height:1.4;margin-top:1.5rem}h2{font-size:24px;line-height:1.4;margin-top:1.5rem}h3{font-size:20px;line-height:1.5;margin-top:1.5rem}h4{font-size:18px;line-height:1.65;margin-top:1.5rem}h5{font-size:16px;line-height:1.65;margin-top:1.5rem}h6{font-size:14px;line-height:1.65;margin-top:1.5rem}p{margin:1.5rem 0;font-size:16px;line-height:1.65}@media only screen and (min-width:30em){p{font-size:18px;line-height:1.65}}a{text-decoration:none;border-bottom:1px solid #282828;color:#282828}a:visited,a:hover{color:#282828}strong,b{font-weight:700}em,i{font-style:italic}ul{list-style-type:none}li{font-size:16px}@media only screen and (min-width:30em){li{font-size:18px}}img,video{display:block;width:100%}button{cursor:pointer;border:none;outline:none;margin:0;padding:0;font-size:16px}@media only screen and (min-width:30em){button{font-size:18px}}sub,sup{font-size:.75rem;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}footer.wanderwhim-footer{padding:3rem 1rem;border-top:4px solid #000;font-family:'Raleway';margin-top:3rem}footer.wanderwhim-footer .footer-recirc{max-width:65rem;margin:0 auto}footer.wanderwhim-footer .footer-recirc__articles{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}footer.wanderwhim-footer .footer-recirc__article{display:block;width:100%;border:none;margin-bottom:2rem}@media only screen and (min-width:50em){footer.wanderwhim-footer .footer-recirc__article{width:calc(25% - 1.5rem);margin-right:1.5rem}footer.wanderwhim-footer .footer-recirc__article:last-of-type{margin-right:0}}footer.wanderwhim-footer .footer-recirc .article__headline{font-family:'Raleway';font-size:20px;line-height:1;font-weight:700;padding-left:.5rem}footer.wanderwhim-footer .footer-company{margin-left:5rem;margin-right:5rem;margin-top:3rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;font-family:'Raleway'}@media only screen and (min-width:50em){footer.wanderwhim-footer .footer-company{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}}footer.wanderwhim-footer .footer-company__cta{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;margin:0 0 0 0;width:100%}@media only screen and (min-width:50em){footer.wanderwhim-footer .footer-company__cta{margin:0 0 0 0}}footer.wanderwhim-footer .footer-company__cta-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;height:12rem}@media only screen and (min-width:50em){footer.wanderwhim-footer .footer-company__cta-list{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}footer.wanderwhim-footer .footer-company__cta-list li{display:-webkit-box;display:-ms-flexbox;display:flex;width:50%;margin-bottom:1rem}footer.wanderwhim-footer .footer-company__cta-list li a{display:-webkit-box;display:-ms-flexbox;display:flex;border:none}footer.wanderwhim-footer .footer-company__cta-list li p{font-family:'Raleway';margin:0;padding-left:.5rem;padding-top:.1rem;line-height:1;color:#949494}@media only screen and (min-width:40em){footer.wanderwhim-footer .footer-company__cta-list li p{font-size:20px}}footer.wanderwhim-footer .footer-company__cta-list li svg{fill:#949494;stroke:none;vertical-align:middle}footer.wanderwhim-footer .footer-company__cta-list li svg circle,footer.wanderwhim-footer .footer-company__cta-list li svg polyline,footer.wanderwhim-footer .footer-company__cta-list li svg line{fill:none;stroke:#949494}footer.wanderwhim-footer .footer-company__cta-list li .feather-mail path,footer.wanderwhim-footer .footer-company__cta-list li .feather-lock path,footer.wanderwhim-footer .footer-company__cta-list li .feather-rss path{stroke:#949494;fill:none}footer.wanderwhim-footer .footer-company__about{-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0;width:100%;color:#949494;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}@media only screen and (min-width:50em){footer.wanderwhim-footer .footer-company__about{width:calc(100% - 24rem)}}footer.wanderwhim-footer .footer-company__about p{margin:0;font-size:16px;line-height:1.4}footer.wanderwhim-footer .footer-company__about svg{width:12rem;margin-bottom:.5rem}header{z-index:1000;position:absolute;top:0;left:0;width:100%;background-color:#fff;font-family:'Raleway'}header a.logo{display:block;border:none;max-width:3rem;margin:1rem auto}header a.logo svg{fill:#282828;display:block;width:100%}header.is-sticky{position:fixed;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);background-color:#fff;-webkit-box-shadow:0 0 7px 1px #c9c9c9;box-shadow:0 0 7px 1px #c9c9c9;height:4rem;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}header.is-sticky a.logo{margin:0 auto}header.is-sticky .header__toggle{position:fixed;-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0);top:0;left:0;padding:.75rem;padding-top:1.25rem;cursor:pointer;line-height:1;z-index:1000;border:none;background-color:transparent}header.is-sticky .header__toggle svg{stroke:#282828}header.is-sticky .header__toggle svg:hover{stroke:#05e646}header.is-sticky .header__toggle span:first-of-type{display:block}header.is-sticky .header__toggle span:last-of-type{display:none}header.is-sticky .header__toggle.is-visible span:first-of-type{display:none}header.is-sticky .header__toggle.is-visible span:last-of-type{display:block}header.is-sticky .header__toggle.is-visible span svg{stroke:#f4f4f4}header.is-sticky .header__menu{position:fixed;top:0;left:0;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);height:100vh;width:100%;max-width:19rem;padding:2rem .5rem;background-color:#282828;color:#f4f4f4;z-index:1000;-webkit-transition:-webkit-transform 200ms ease-in-out;transition:-webkit-transform 200ms ease-in-out;-o-transition:transform 200ms ease-in-out;transition:transform 200ms ease-in-out;transition:transform 200ms ease-in-out, -webkit-transform 200ms ease-in-out}@media only screen and (min-width:30em){header.is-sticky .header__menu{border-right:1px solid #5b5b5b}}header.is-sticky .header__menu.is-visible{-webkit-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0)}header.is-sticky .header__menu a{color:#f4f4f4;border-bottom:1px solid #f4f4f4}header.is-sticky .header__menu a:hover{color:#05e646}header.is-sticky .header__menu p{color:#f4f4f4;margin-left:2.5rem}header.is-sticky .header__menu .menu__links{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row}@media only screen and (min-width:40em){header.is-sticky .header__menu .menu__links{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}}header.is-sticky .header__menu .menu__links li{font-family:'Raleway';font-weight:700;text-transform:uppercase;margin-bottom:.5em;margin-left:1.5em;font-size:20px}@media only screen and (min-width:30em){header.is-sticky .header__menu .menu__links li{font-size:24px}}header.is-sticky .header__menu a.patreon-link{font-family:'Raleway';font-weight:700;text-transform:uppercase;border:none;background-color:#fff;color:#2e4328;padding:.5em .75em}header.is-sticky .header__menu a.patreon-link:hover{opacity:.75}header.is-sticky .menu__patrons ul{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap}header.is-sticky .menu__patrons li:after{display:inline;content:',';margin-left:.25em}header.is-sticky .menu__patrons li:last-of-type:after{content:'.'}header.is-sticky.is-dark{background-color:#2e4328;-webkit-box-shadow:0 0 7px 1px #2e4328;box-shadow:0 0 7px 1px #2e4328}header.is-sticky.is-dark svg path{fill:#f4f4f4}header.is-sticky.is-dark .header__menu{background-color:#2e4328;color:#fff}@media only screen and (min-width:30em){header.is-sticky.is-dark .header__menu{border-left:1px solid #fff}}header.is-sticky.is-dark a{color:#fff;border-bottom:1px solid #fff}header.is-sticky.is-dark a:hover{color:#008e00}header.is-sticky.is-dark .header__toggle svg{stroke:#fff}header.is-sticky.is-dark .header__toggle.is-visible span svg{stroke:#fff}.intro{margin-left:10rem;margin-right:10rem;padding:1rem 1rem 3rem 1rem}.intro__hed{max-width:60rem;margin:0 auto;text-align:center}.intro__dek{max-width:40rem;margin:0 auto;margin-top:1rem;text-align:center}.intro__byline{max-width:40rem;margin:0 auto;margin-top:1rem;text-align:center}.intro__time{display:block;max-width:40rem;margin:0 auto;margin-top:1rem;text-align:center}@font-face{font-family:'Raleway'}body{padding:5em}.wrapper{position:relative;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-right:10rem;margin-left:10rem;display:block}.tooltip{opacity:0}.bounds-background{fill:#fff}.rect{opacity:.25;stroke-width:1;stroke-opacity:1}.season-path{stroke-opacity:1}.record-label{-webkit-font-feature-settings:'tnum' 1;font-feature-settings:'tnum' 1;-webkit-transition:all .1s ease-out;-o-transition:all .1s ease-out;transition:all .1s ease-out}.season-label{font-size:.36em;text-anchor:end;-webkit-font-feature-settings:'tnum' 1;font-feature-settings:'tnum' 1;-webkit-transition:all .1s ease-out;-o-transition:all .1s ease-out;transition:all .1s ease-out}.legend-tile{stroke-opacity:0}.bookend-legend-tile{stroke-opacity:0}.legend-tick{stroke:#000}.voronoi{fill:transparent}.autocomplete position relative{margin-right:10rem;margin-left:10rem;display:block}.typeahead{width:105px;position:relative;opacity:0;border:none;z-index:0}input[type=text]{font-size:1.2rem;background-color:transparent;width:100%;opacity:1;outline-width:0;text-align:center;border:none;border-bottom:3px solid #808080}.typeahead.dropdown-menu,span.twitter-typeahead .tt-menu{min-width:100%;background:#fff;border:none;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);border-radius:0;font-size:1.2rem}span.twitter-typeahead .tt-hint{font-size:0}span.twitter-typeahead .tt-suggestion{color:#808080;cursor:pointer;padding:1rem;text-transform:capitalize;font-weight:400}span.twitter-typeahead .tt-menu{max-height:300px;overflow-y:auto}span.twitter-typeahead .active.tt-suggestion,span.twitter-typeahead .tt-suggestion.tt-cursor,span.twitter-typeahead .active.tt-suggestion:focus,span.twitter-typeahead .tt-suggestion.tt-cursor:focus,span.twitter-typeahead .active.tt-suggestion:hover,span.twitter-typeahead .tt-suggestion.tt-cursor:hover{background-color:#eee;color:#4285f4}</style>
- -->
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff' type='font/woff' as='font' crossorigin>
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff' type='font/woff' as='font' crossorigin>
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff' type='font/woff' as='font' crossorigin>
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff' type='font/woff' as='font' crossorigin>
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff' type='font/woff' as='font' crossorigin>
+    <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff' type='font/woff' as='font' crossorigin>
+	<link rel="stylesheet" href="./../css/wnba-season-history.css">
+
 	<style>
-        /*
-        ********************
-               Raleway
-        ********************
-        */
-    
-        @font-face {
-            font-family: 'Raleway';
-            src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff'),  /* Modern Browsers */
-            font-weight: 400;
-            font-style: normal;
-            font-stretch: normal;
-            font-display: swap;
-        }
-    
-        @font-face {
-            font-family: 'Raleway';
-            src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff'),  /* Modern Browsers */
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
-            font-display: swap;
-        }
-    
-        @font-face {
-            font-family: 'Raleway';
-            src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff'),  /* Modern Browsers */
-            font-weight: 700;
-            font-style: normal;
-            font-stretch: normal;
-            font-display: swap;
-        }
+            /*
+            ********************
+                   Raleway
+            ********************
+            */
         
-	
-		/*
-		********************
-			   Avenir
-		********************
-		*/
-	
-		@font-face {
-			font-family: 'Avenir';
-			src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff');
-			font-weight: 400;
-			font-style: normal;
-			font-stretch: normal;
-			font-display: swap;
-		}
-	
-		@font-face {
-			font-family: 'Avenir';
-			src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff');
-			font-weight: 500;
-			font-style: normal;
-			font-stretch: normal;
-			font-display: swap;
-		}
-	
-		@font-face {
-			font-family: 'Avenir';
-			src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff');
-			font-weight: 700;
-			font-style: normal;
-			font-stretch: normal;
-			font-display: swap;
-		}
+            @font-face {
+                font-family: 'Raleway';
+                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Raleway';
+                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff');
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Raleway';
+                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff');
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            /*
+            ********************
+                   Avenir
+            ********************
+            */
+        
+            @font-face {
+                font-family: 'Avenir';
+                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff');
+                font-weight: 400;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Avenir';
+                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff');
+                font-weight: 500;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
+        
+            @font-face {
+                font-family: 'Avenir';
+                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff');
+                font-weight: 700;
+                font-style: normal;
+                font-stretch: normal;
+                font-display: swap;
+            }
 	</style>
 	<script>
 	
@@ -161,42 +154,136 @@
 			</p>
 			<time class='intro__time'>May 2020</time>
 			<div class='intro__prelude'>
-				<p>The Women's National Basketball Association (WNBA) is only the most recent chapter of a history of women's basketball dating back to the 1890's. Building upon several movements and the gains of past leagues, the WNBA has fully established itself as the premier women's basketball league in the U.S. The league continues to build its fan base and work toward a self-sustaining model. For fans who started following the league more recently, like myself, I've put together a brief visual history of the WNBA.</p>
-
-				<h2>1997 - 2000: Houston + Expansion</h2>
-				<p>The WNBA had its inaugural season in 1997, starting with 8 teams and a season of 28 games. In the first few years, the Houston Comets dominated the league with the original Big 3 of Cynthia Cooper, Tina Thompson and Sheryl Swoopes. They won the first 4 WNBA titles, kicking off the league with a full-fledged dynasty. By the end of this era the league had grown to 16 teams and a 30 game schedule.</p>
-
-				<h2>2001 - 2002: LA Sparks</h2>
-				<p>Following the Houston Comets Dynasty was a formidable pair of seasons from the LA Sparks led by WNBA icon Lisa Leslie. </p>
-
-				<h2>2003 - 2009: Detroit Shock + Team Movement</h2>
-				<p>Following the Houston Comets Dynasty was a formidable pair of seasons from the LA Sparks led by WNBA icon Lisa Leslie. </p>
+				<p>The Women's National Basketball Association (WNBA) is only the most recent chapter in the long history of basketball dating back to the 1890's. The <a href="#appendix">Appendix</a> here provides a brief overview of important moments in that history. Building upon several movements and the gains of past leagues, the WNBA has established itself as the premier professional women's basketball league in the U.S. To help show where the league came from and where it's headed, I've put together a visual history of the WNBA seen through the lens of its championship teams and transcendent players. Scroll below to start exploring!</p>
 			</div>
 		</div>
-		<div id="wrapper" class="wrapper"></div>
-		<div id="nba-autocomplete" class="autocomplete">
-            <input type="text" class="form-control typeahead" id="nba-team-input">
-        </div>
 
-        <br id="appendix">
+		<section id='scrolly-side'>
+			<div class='scrolly'>
+							<!-- sticky graphic -->
+				<figure class='sticky'>
+					<div id="season-history-wrapper" class="season-history-wrapper">
+						<button class="toggle" id="toggle-win-pct">Win Pct.</button>
+						<button class="toggle" id="toggle-num-games">Games Won</button>
+						<h1 class="top-label" id="top-label" style="border-bottom: 2px solid gray"></h1>
+					</div>
+				</figure>
+
+				<article>
+					<div class='step' data-index='0'></div>
+					<div class='step' data-index='1'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Houston Comets.png"></img>
+						<br>
+						<p>
+							The WNBA had its inaugural season in 1997, starting with 8 teams and a season of 28 games. In the first few years, the Houston Comets dominated the league with the original Big 3 of Cynthia Cooper, Tina Thompson and Sheryl Swoopes.<br><br> They won the first 4 WNBA titles, kicking off the league with a full-fledged dynasty. Cynthia Cooper was the league's first dominant guard, winning its first 2 MVP's and 4 Finals MVP's in a row before retiring in 2000. She joined the league at age 34, so one can only imagine the type of impact she could have had if the league were founded sooner.<br><br>Sheryl Swoopes picked up the team where Cooper left off, winning 3 MVP's herself, though she was unable to lead the team to another title. By the end of this era, the league had grown to 16 teams and a 30 game schedule.
+						</p>
+					</div>
+					<div class='step' data-index='2'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Los Angeles Sparks.png"></img>
+						<br>
+						<p>
+							The Los Angeles Sparks were a team on the rise beginning in 1997 with the acquisition of WNBA icon and center Lisa Leslie. After losing in consecutive playoffs to Houston in 1999 and 2000, the Sparks finally overcame the Comets in 2001. This would lead to the first of their back-to-back championships.<br><br> The Sparks remained in title contention throughout the remainder of Lisa Leslie's prime: she won MVP's in 2001, 2004 and 2006. Also part of Leslie's significant impact on the game, in 2002 she became the first woman to throw down a <a href="https://www.wnba.com/video/lisa-leslie-wnba-first-dunk/">dunk mid-game</a>.
+						</p>
+					</div>
+					<div class='step' data-index='3'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Detroit Shock.png"></img>
+						<br>
+						<p>
+							In the Sparks' bid for a three-peat, they came across the newly ascendant Detroit Shock in 2003. The previous year, the Shock held a 9-23 record which was the worst in the WNBA. After completely turning over the roster, the Shock dominated the regular reason en route to a 25-9 record.<br><br> In that first playoff run, they'd knock off the Cleveland Rockers, the Connecticut Sun, and ultimately dethrone the LA Sparks. The immediate success proved hard to sustain though. Over the next two years, the team posted mediocre records and was bounced early from the playoffs.<br><br>The Shock's resilience became clear though, as from 2006 - 2008, the team won another two championships. Known for their cohesive team style of play, the Shock never had a single regular season MVP during this championship run. At the end of this 7 year stretch, the team relocated to Tulsa, simultaneously bringing an end to their championship contention.
+						</p>
+					</div>
+					<div class='step' data-index='4'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Seattle Storm 00s.png"></img>
+						<br>
+						<p>
+							The start of the Seattle Storm franchise was rocky, but it led to back-to-back No. 1 draft picks in Lauren Jackson and Sue Bird. Lauren Jackson, a basketball prodigy from Australia, would go on to win 3 MVP trophies and 2 championships with the team. The tandem of Bird and Jackson kept the team perennially in contention, leading to some ground-breaking seasons.<br><br>Their first championship in 2004 would make Anne Donovan the first female head coach in WNBA history to win the title. And their second championship run in 2010 would lead to unparalleled team milestones: a perfect 17-0 regular season home record and 3 consecutive sweeps in the playoffs leading to the trophy.
+						</p>
+					</div>
+					<div class='step' data-index='5'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Sacramento Monarchs.png"></img>
+						<br>
+						<p>
+							For years, the Sacramento Monarchs had an MVP caliber player and prolific scorer in Yolanda Griffith. The team was overshadowed, however, by the success of the Comets and Sparks in the league's early years. A series of moves designed to bring in help for Griffith led to an ascendant and memorable championship run in 2005.<br><br>Ripping through the regular season with a 25-9 record, the team swept the Swoopes-led Comets and Leslie-led Sparks. In the league's first 5-game format championship series, they beat the Connecticut Sun 3-1. The following year, the Monarchs would once again make it back to the Finals, falling 3-2 in a close series with the Shock.
+						</p>
+					</div>
+					<div class='step' data-index='6'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Phoenix Mercury 00s.png"></img>
+						<br>
+						<p>
+							The selection of Diana Taurasi in the 2004 WNBA draft was a franchise-altering move that had nearly immediate returns. By 2006, Taurasi, an incredible scorer and distributor, ascended to score a then-record 47 points in game. The same year, she set per game scoring record (25.3 ppg) which still stands.<br><br> Team success would come the following year as Taurasi, along with co-stars Cappie Pondexter and Penny Taylor, would lead the team to a 23 - 11 regular season record and Phoenix's first title. The following year would be a fall from grace with the defending champs failing to qualify for the playoffs. This only provided fuel for the fire in 2009, when the same trio led Phoenix back to another Finals victory.
+						</p>
+					</div>
+					<div class='step' data-index='7'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Indiana Fever.png"></img>
+						<br>
+						<p>
+							From 2011 to 2017, there was a smattering of teams that captured a single championship. The first of these was the Indiana Fever in 2012. At the time, Fever star Tamika Catchings had built an impressive resume: Rookie of the Year, MVP, multiple Defensive Player of the Year, All-WNBA and All-Star honors. In 2009, the Fever made the Finals but had lost narrowly to the Mercury.<br><br>In 2012, they fought their way to the Finals, first defeating Eastern Conference champs the Connecticut Sun. In the Finals they took down a tough Minnesota Lynx team, putting the final accomplishing touch on Catchings illustrious career.
+						</p>
+					</div>
+					<div class='step' data-index='8'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Phoenix Mercury.png"></img>
+						<br>
+						<p>
+							A couple years later in 2014, Diana Taurasi and newly drafted center Brittney Griner transcended the regular season into a WNBA record 29 wins. During this season, Taurasi reached the top-10 career list for assists and became fifth all time in points. She also won her second Finals and second Finals MVP after defeating Elena Delle Donne and the Chicago Sky.<br><br>Emblematic of the WNBA's difficulty to provide sufficient financial incentives during this era, Taurasi would sit out the following season at the request of her Russian Premier League (RPL) team. At the time, she made 100K in the WNBA, but 1.5M with the RPL. Because of these obvious incentives, she played in the RPL from 2005 to 2017.<br><br>Even today, the RPL is consistently able to draw talent from the U.S. to play overseas with better contracts and a more <a href="https://www.swishappeal.com/2018/5/11/17344006/2018-wnba-hoops-happening-womens-basketball-phoenix-mercury-brittney-griner-gender-inequality">professional league structure</a>. That dynamic is beginning to wane with a stronger WNBA and the new CBA signed for 2020. The WNBA is still fighting for professional guarantees on-par with premier women's leagues like the RPL and of course, men's leagues like the NBA. In-roads are being made but the process has been difficult and slow.
+						</p>
+					</div>
+					<div class='step' data-index='9'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Los Angeles Sparks.png"></img>
+						<br>
+						<p>
+							The third single-championship team in this 2011 - 2017 era was the Los Angeles Sparks. Their return to championship glory started with Nneka Ogwumike's 2016 regular season MVP. A former 1st overall pick, in 2016 Nneka set the professional basketball record for <a href="https://www.vice.com/en_us/article/yp8j8k/nneka-ogwumike-is-the-most-efficient-shooter-ever-in-professional-basketball">true shooting percentage</a> in a season: 73.7% (!). The Sparks that year won a best of 5 series against the Lynx that came down to the wire. Nneka grabbed an offensive board and put up the game-winning shot with a mere 3 seconds left.<br><br>In 2019, her sister and fellow All-Star Chiney Ogwumike would join the Sparks, helping lead the team back to the best record in the West and title contention. We'll see if they can continue the upward trajectory when the 2020 season begins.
+						</p>
+					</div>
+					<div class='step' data-index='10'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Minnesota Lynx.png"></img>
+						<br>
+						<p>
+							Overshadowing the previous three teams was a the Minnesota Lynx dynasty. From 2011 to 2017, they made the Finals six times in seven years, winning four championships. This path to success begain with selection of small forward Maya Moore. In her college career at UConn, she led the team to a 150-4 record (!) and two straight 39-0 seasons culminating in NCAA championships.<br><br>Her first year in the WNBA, she would lead the Lynx straight to the Finals and clinch a championship. The next two years, Moore led the team back to the Finals, losing in 2012 to the Fever and winning again in 2013. In 2014, Maya had her best individual season winning the regular season MVP, but they fell to the Mercury in the Western Conference Finals.<br><br>Midway through the 2015 season, a trade would bring accomplished center Sylvia Fowles to the team. Fowles helped the team win their third championship, winning Finals MVP honors herself. 2016 was another dynamite regular season for the Lynx, ending in a 28-6 record. Nneka's prolific season overpowered the team, but the Lynx returned the favor the following year. Behind an impressive 2017 MVP season from Sylvia Fowles, the Lynx made it right back to the Finals, beating the Sparks in a 5 game series.
+						</p>
+					</div>
+					<div class='step' data-index='11'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Seattle Storm.png"></img>
+						<br>
+						<p>
+							In 2018, the aging core of the Lynx would leave the postseason open to contenders. In the East, the Seattle Storm ascended. With a mixture of veteran presence led by Sue Bird and burgeoning accomplishment led by Breanna Stewart, the Storm captured their 3rd franchise trophy.<br><br>Breanna Stewart won both league MVP and Finals MVP that season, just two years after winning Rookie of the Year in 2016. Though she had to sit out the 2019 season due to injury, 2020 promises an exciting return to the top of the league.
+						</p>
+					</div>
+					<div class='step' data-index='12'>
+						<img class="large-image" src="../assets/images/logos/WNBA/Washington Mystics.png"></img>
+						<br>
+						<p>
+							In the West, the Washington Mystics took up the mantle left by the Lynx, reaching the Finals in both 2018 and 2019. After acquiring star player Elena Delle Donne in 2017 the team has been on a straight shot upward. After the 2018 Finals defeat, the Mystics recommitted to their championship quest with an even stronger 2019 regular season, going 26-8. Elena Delle Donne became the first WNBA player to join the 50-40-90 club en route to her first regular season MVP.<br><br>In the playoffs, Delle Donne battled through a back injury to help her team win its first championship against a tenacious Connecticut Sun team also looking for its first championship. Fellow forward Emma Meesseman had an outstanding series, picking up her off-the-bench production and winning Finals MVP honors.<br><br>When the 2020 season returns, there should be substantial changes to the schedule. The number of games is planned to increase from 34 to 36, and a mid-season tournament called the Commissioner's Cup will begin. Most importantly, player compensation will increase over 50%: another step to bring the WNBA toward premier global status.
+						</p>
+					</div>
+					<div class='step' data-index='13'></div>
+				</article>
+
+
+
+				<!-- step text -->
+			</div>
+		</section>
+		
+		<br id="appendix">
 		<div class='appendix'>
 			<h1>Appendix</h1>
         	<h2>Origins</h2>
-			<p>The long <a href="https://www.wnba.com/news/history-of-womens-basketball/">history of women’s involvement in basketball</a> dates back to the origins of the sport itself. In 1892, in tandem with basketball’s invention, <a href="https://jwa.org/encyclopedia/article/berenson-senda">Senda Berenson</a> introduced the game to Smith College in Massachusetts. Slowly, intercollegiate competition grew in the West at Cal-Berkeley and Stanford, in the South at <a href="https://www.jstor.org/stable/43609682?seq=1">Bennett College</a> and Sophie Newcomb College, in the Northeast at Bryn Mawr and Vassar, and in the Midwest at the University of Nebraska and Kanasas State.</p>
+			<p>The long <a href="https://www.wnba.com/news/history-of-womens-basketball/">history of women’s basketball</a> begins in the 1890's. In 1892, in tandem with basketball’s invention, <a href="https://jwa.org/encyclopedia/article/berenson-senda">Senda Berenson</a> introduced the game to Smith College in Massachusetts. Soon after, it would be a nationwide sport. Intercollegiate competition grew in the West at Cal-Berkeley and Stanford, in the South at <a href="https://www.jstor.org/stable/43609682?seq=1">Bennett College</a> and Sophie Newcomb College, in the Northeast at Bryn Mawr and Vassar, and in the Midwest at the University of Nebraska and Kanasas State.</p>
 
 			<p>Much of the early growth of the game also took place in high schools. Already in 1896, Chicago Austin High School and Oak Park played the <a href="https://womenshoopsblog.wordpress.com/womens-basketball-timeline-since-1891/">first high school game</a>. By 1910, the <a href="https://www.blackfives.org/december-is-black-womens-basketball-history-month/">New York Girls</a>, the first all-black, all-female high school team, was founded and won a state championship. In 1924 came another important basketball moment: the sport's first 100-point game. Except it wasn't just a 100-point game. It was a <a href="http://www.espn.com/espn/page2/story?page=list/060124">156 point outburst</a> by Marie Boyd in an overall demolition of 163-3. Absolutely merciless.</p>
 
-			<h2>Industrial Teams & Barnstorming</h2>
-			<p>In the 1910's and 20's, quasi-professional industrial teams sponsored by corporations began to emerge. It was great publicity to have a winning team, and by 1923 there were enough teams to have a formal tournament culminating in the <a href="https://en.wikipedia.org/wiki/Edmonton_Grads#North_American_Underwood_Trophy">Underwood Trophy</a>. The Edmonton Grads (i.e. the Commercial Graduates) consistently dominated this league and all other competition. Between 1915 and 1940, the team went an astonishing 502-20, winning against men's teams, universities, industrial teams, and Olympic competition.</p>
+			<h2>Industrial Teams &amp; Barnstorming</h2>
+			<p>In the 1910's and 20's, quasi-professional industrial teams sponsored by corporations began to emerge. It was great publicity to have a winning team, and by 1923 there were enough teams to have a formal tournament culminating in the <a href="https://en.wikipedia.org/wiki/Edmonton_Grads#North_American_Underwood_Trophy">Underwood Trophy</a>. The Edmonton Grads (i.e. the Commercial Graduates) consistently dominated this league and all other competition. Between 1915 and 1940, the team went an astonishing 502-20, defeating men's teams, universities, industrial teams, and Olympic competition.</p>
 
 			<p>In this era, overcoming both gender discrimination and racism, some of the earliest professional basketball clubs founded were the all-black <a href="https://originalpeople.org/top-25-african-americans-who-pioneered-the-integration-of-pro-basketball/">Chicago Romas</a> (1920) and <a href="https://www.blackfives.org/all-hail-the-philadelpha-tribune-girls-happy-birthday-ora-mae-washington/">Philadelphia Tribunes</a> (1931). The star players of each team, Ora Mae Washington and Isadore Channels, were excellent athletes who were also champion tennis players of the era. Notably, the Romas, who competed against men's and women's teams, didn't lose a single game during a six year span from 1939 to 1945.</p> 
 
 			<p>Also founded in the 1930’s and 40’s, all-white barnstorming professional teams like the <a href="https://arktimes.com/news/cover-stories/2012/11/07/without-the-all-american-red-heads-there-would-be-no-wnba">All American Red Heads</a> (1936) and <a href="https://www.kuaf.com/post/womens-basketball-today-has-arkansas-connection#stream/0">Arkansas Travelers</a> (1949) played in arenas and literal barns across the country. They each played exclusively against men’s teams, beating them 70% to 80% of the time. The Travelers, led by early basketball icon <a href="https://en.wikipedia.org/wiki/Hazel_Walker">Hazel Walker</a> would continue to compete through the 1960's.</p>
 
 			<h2>Professional Leagues</h2>
-			<p>It took the better part of a century though for the first professional league, the <a href="https://en.wikipedia.org/wiki/Women%27s_Professional_Basketball_League">Women's Professional Basketball League</a> (WBL), to form in 1978. While it only lasted through 1983 (unpaid salaries rightfully led to player protests and the league’s closure), it set the stage for professional leagues to follow in the U.S. It led to the <a href="https://en.wikipedia.org/wiki/Women%27s_American_Basketball_Association">Women’s American Basketball Association</a> (WABA), which had on-and-off seasons between 1984 and 1995. Ultimately, interest in the sport led to the founding of the WNBA in 1996 and its first season in 1997. With it began the most recent and powerful chapter of professional women’s basketball in the United States.</p>
-		</div>
+			<p>It took the better part of a century, though, for the first professional league, the <a href="https://en.wikipedia.org/wiki/Women%27s_Professional_Basketball_League">Women's Professional Basketball League</a> (WBL), to form in 1978. While it only lasted through 1983 (unpaid salaries rightfully led to player protests and the league’s closure), it set the stage for professional leagues to follow in the U.S. It led to the <a href="https://en.wikipedia.org/wiki/Women%27s_American_Basketball_Association">Women’s American Basketball Association</a> (WABA), which had on-and-off seasons between 1984 and 1995.</p>
 
+			<p>Many premier women's basketball players of the era, like Cynthia Cooper, played in more stable and lucrative European leagues. Ultimately, interest in the sport led to the founding of the WNBA in 1996 and its first season in 1997. With it began the most recent and powerful chapter of professional women’s basketball in the United States.</p>
+		</div>
         <script src="http://wanderwhim.com/assets/scripts/d3-delaunay.min.js"></script>
         <script src="http://wanderwhim.com/assets/scripts/d3.v5.js"></script>
         <script src="http://wanderwhim.com/assets/scripts/typeahead.bundle.js"></script>
@@ -215,9 +302,3 @@
 </body>
 
 </html>
-
-<svg x=0 y=0 width=55 height=55>
- <filter id="grayscale">
-  <feColorMatrix type="matrix" values="0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0"/>
- </filter>
-</svg>
