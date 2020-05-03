@@ -9018,8 +9018,8 @@ function _drawSeasonHistoryByMetric() {
               if (i === 0 || i === years.length - 1 || d % YEAR_INTERVAL === 0) {
                 return d;
               }
-            }).attr("font-size", 12).attr("font-weight", "bold").attr("text-anchor", "middle").attr("fill", function (d) {
-              return d % YEAR_INTERVAL === 0 ? "#838383" : "#b5b5b5";
+            }).attr("font-size", 12).attr("text-anchor", "middle").attr("fill", function (d) {
+              return d % YEAR_INTERVAL === 0 ? "black" : "#b5b5b5";
             }).attr("opacity", 1);
             numGamesLineBreaks = getIntervalArray(0, NUM_GAMES + 1, GAME_TICK_INTERVAL);
             numGamesGridlines = bounds.selectAll(".num-games-gridlines").data(numGamesLineBreaks).enter().append("rect").attr("class", "num-games-gridlines").attr("x", 0).attr("y", function (d) {
@@ -9037,7 +9037,7 @@ function _drawSeasonHistoryByMetric() {
               return yScale(d);
             }).text(function (d) {
               return d;
-            }).attr("font-size", 12).attr("font-weight", "bold").attr("text-anchor", "end").attr("fill", "#b5b5b5").attr("opacity", 0);
+            }).attr("font-size", 12).attr("text-anchor", "end").attr("fill", "black").attr("opacity", 0);
             numGamesLineGenerator = d3.line().x(function (d) {
               return xScale(d.year);
             }).y(function (d) {
@@ -9056,7 +9056,7 @@ function _drawSeasonHistoryByMetric() {
               return yScale(Math.round(d * 10) / 10);
             }).text(function (d) {
               return Math.round(d * 10) / 10;
-            }).attr("font-size", 12).attr("font-weight", "bold").attr("text-anchor", "end").attr("fill", "#b5b5b5");
+            }).attr("font-size", 12).attr("text-anchor", "end").attr("fill", "black");
             seasonLineGenerator = d3.line().x(function (d) {
               return xScale(d.year);
             }).y(function (d) {
@@ -10754,4 +10754,3 @@ function init() {
 
 init();
 },{"lodash.debounce":"or4r","./utils/is-mobile":"WEtf","./utils/link-fix":"U9xJ","./graphic":"TAPd","./footer":"v9Q8"}]},{},["epB2"], null)
-//# sourceMappingURL=/main.js.map

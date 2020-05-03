@@ -225,7 +225,7 @@ body {
   background-color: #fff;
   color: #282828;
   font-weight: 400;
-  font-family: 'Raleway';
+  font-family: 'Avenir';
   font-size: 16px;
 }
 @media only screen and (min-width: 30em) {
@@ -732,7 +732,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   text-align: center;
 }
 @font-face {
-  font-family: Avenir;
+  font-family: 'Avenir';
 }
 body {
   padding: 5em;
@@ -900,7 +900,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 }
 #scrolly-side .scrolly article .step p {
   margin: 0;
-  font-family: Avenir;
+  font-family: 'Avenir';
   color: #000;
 }
 #scrolly-side .scrolly article .step h1 {
@@ -980,6 +980,7 @@ button.toggle:focus {
   width: 100%;
 }
 #top-label {
+  font-family: 'Raleway';
   position: absolute;
   left: 50%;
   margin-right: -50%;
@@ -1000,7 +1001,12 @@ button.toggle:focus {
   font-size: 16px;
 }
 .win-pct-label {
+  font-family: 'Raleway';
   vertical-align: middle;
+}
+.year-label {
+  font-family: Raleway;
+  font-weight: 200px
 }
 .bottom-text {
   width: 40%;
@@ -1020,7 +1026,6 @@ button.toggle:focus {
   border-radius: 5px;
   text-align: center;
   padding: 7px;
-  font-family: Avenir;
+  font-family: 'Avenir';
   font-size: 16px;
 }
-/*# sourceMappingURL=bundle.css.map */
