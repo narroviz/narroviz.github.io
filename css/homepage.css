@@ -728,7 +728,7 @@ header.is-sticky .header__menu img {
   right: 0;
   margin: auto
   width: 100px;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 header.is-sticky .header__menu a:hover {
   text-decoration: none;
