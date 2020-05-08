@@ -768,7 +768,7 @@ header.is-sticky .header__menu .menu__links li {
   text-decoration: none;
   margin-bottom: 0.5em;
   margin-left: 1em;
-  padding-right: 10rem;
+  padding-right: 4rem;
   font-size: 20px;
 }
 @media only screen and (min-width: 30em) {
