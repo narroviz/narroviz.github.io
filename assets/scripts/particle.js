@@ -1,7 +1,7 @@
 // ParticlesJS Config.
 particlesJS("particles-js", {
   "particles": {
-    "fps_limit": 40,
+    "fps_limit": 50,
     "number": {
       "value": 50,
       "density": {
