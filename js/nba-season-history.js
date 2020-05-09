@@ -8656,13 +8656,11 @@ var LEAGUE = 'NBA';
 
 function resize() {
   setConfig(LEAGUE);
-  console.log(DIMENSIONS);
   updateSeasonHistoryByMetric(BOUNDS, DIMENSIONS);
 }
 
 function init() {
   setConfig(LEAGUE);
-  console.log(DIMENSIONS);
   drawSeasonHistory(LEAGUE, WRAPPER, BOUNDS, DIMENSIONS); // drawSeasonPaths(LEAGUE)
 }
 
@@ -8759,18 +8757,14 @@ function _setConfig() {
             DIMENSIONS.boundedWidth = DIMENSIONS.width - DIMENSIONS.margin.left - DIMENSIONS.margin.right;
             DIMENSIONS.boundedHeight = DIMENSIONS.height - DIMENSIONS.margin.top - DIMENSIONS.margin.bottom; // 3. Draw Canvas
 
-            console.log(d3.selectAll("#bounds-svg")._groups[0]);
-            console.log(d3.selectAll("#bounds-svg")._groups[0].length);
 
             if (d3.selectAll("#wrapper-svg")._groups[0].length === 0) {
               WRAPPER = d3.select("#season-history-wrapper").append("svg").attr("id", "wrapper-svg").style("transform", "translate(".concat(wrapperWidth / 2 - DIMENSIONS.width / 2, "px, ", 0, "px)")).attr("width", DIMENSIONS.width).attr("height", DIMENSIONS.height);
               BOUNDS = WRAPPER.append("g").attr("id", "bounds-g").style("transform", "translate(".concat(DIMENSIONS.margin.left, "px, ").concat(DIMENSIONS.margin.top, "px)"));
             } else {
               WRAPPER.style("transform", "translate(".concat(wrapperWidth / 2 - DIMENSIONS.width / 2, "px, ", 0, "px)")).attr("width", DIMENSIONS.width).attr("height", DIMENSIONS.height); // BOUNDS
-              // 	.style("transform", `translate(${DIMENSIONS.margin.left}px, ${DIMENSIONS.margin.top}px)`)
+              //  .style("transform", `translate(${DIMENSIONS.margin.left}px, ${DIMENSIONS.margin.top}px)`)
             }
-
-            console.log(DIMENSIONS);
 
           case 10:
           case "end":
@@ -9422,7 +9416,6 @@ function _drawSeasonHistoryByMetric() {
             });
             container = d3.select('#scrolly-side');
             stepSel = container.selectAll('*[class^=step]');
-            console.log(stepSel);
             enterView({
               selector: stepSel.nodes(),
               offset: 0.5,
@@ -9527,7 +9520,7 @@ function drawSelectedFranchiseHistory(selectedTeam, visibleTeam, visibleFullSeas
       return d.team === selectedTeam;
     }); // Franchise History
     // if (teamHistory) {
-    // 	teamWinLossData = seasonWinLossData.filter(d => teamHistory.includes(d.selectedTeam))
+    //  teamWinLossData = seasonWinLossData.filter(d => teamHistory.includes(d.selectedTeam))
     // }
 
     var teamWins = teamWinLossData.map(function (d) {
@@ -9623,7 +9616,6 @@ function drawSelectedFranchiseHistory(selectedTeam, visibleTeam, visibleFullSeas
     }
 
     var finalPosition = topMargin + logoSize + initialPadding + 45 + elementPadding + 35 + elementPadding + franchisePadding + 35 + chunkedChampionships.length * 25;
-    console.log(finalPosition, interactiveWrapperHeight);
 
     if (finalPosition > interactiveWrapperHeight - 100) {
       interactiveWrapper.attr("height", finalPosition + 100);
@@ -10141,7 +10133,11 @@ function loadStories(cb) {
 }
 
 function createLink(d) {
-  return "\n\t<a class='footer-recirc__article' href='http://wanderwhim.com/".concat(d.url, "' target='_blank' rel='noopener'>\n\t\t<img class='article__img' src='./../assets/images/").concat(d.image, ".png' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
+  if (d.url !== " ") {
+    return "\n\t<a class='footer-recirc__article' href='http://wanderwhim.com/".concat(d.url, "' target='_blank' rel='noopener'>\n\t\t<img class='article__img' src='./../assets/images/").concat(d.image, ".png' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
+  } else {
+    return "\n\t<a class='footer-recirc__article' target='_blank' rel='noopener'>\n\t\t<img class='article__img'".concat("' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
+  }
 }
 
 function recircHTML() {
@@ -10153,22 +10149,25 @@ function recircHTML() {
 }
 
 function init() {
-  storyData = [{
-    "image": "wnba",
-    "url": "2020/05/wnba-recordigami",
-    "hed": "NBA Recordigami"
+  storyData = [
+  {
+    "image": "",
+    "url": " ",
+    "hed": ""
+  },
+  {
+    "image": "wnba_season_paths_alt",
+    "url": "html/wnba-season-history",
+    "hed": "WNBA Season History"
   }, {
-    "image": "wnba",
-    "url": "2020/05/wnba-random-walk",
-    "hed": "NBA Random Walk"
-  }, {
-    "image": "wnba",
-    "url": "2020/05/wnba-recordigami",
-    "hed": "WNBA Recordigami"
-  }, {
-    "image": "wnba",
-    "url": "2020/05/wnba-random-walk",
-    "hed": "WNBA Random Walk"
+    "image": "nba_season_paths",
+    "url": "html/nba-season-history",
+    "hed": "NBA Season History"
+  },
+  {
+    "image": "",
+    "url": " ",
+    "hed": ""
   }];
   recircHTML();
 }
