@@ -225,7 +225,7 @@ body {
   background-color: #fff;
   color: #282828;
   font-weight: 400;
-  font-family: 'Avenir';
+  font-family: 'Raleway';
   font-size: 16px;
 }
 @media only screen and (min-width: 30em) {
@@ -336,7 +336,7 @@ sub {
 footer.wanderwhim-footer {
   padding: 3rem 1rem;
   border-top: 4px solid #000;
-  font-family: 'Raleway';
+  font-family: 'Avenir';
   margin-top: 3rem;
 }
 footer.wanderwhim-footer .footer-recirc {
@@ -369,7 +369,8 @@ footer.wanderwhim-footer .footer-recirc__article {
   }
 }
 footer.wanderwhim-footer .footer-recirc .article__headline {
-  font-family: 'Raleway';
+  font-family: 'Avenir';
+  text-align: center;
   font-size: 20px;
   line-height: 1;
   font-weight: 700;
@@ -386,7 +387,7 @@ footer.wanderwhim-footer .footer-company {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-family: 'Raleway';
+  font-family: 'Avenir';
 }
 @media only screen and (min-width: 50em) {
   footer.wanderwhim-footer .footer-company {
@@ -442,7 +443,7 @@ footer.wanderwhim-footer .footer-company__cta-list li a {
   border: none;
 }
 footer.wanderwhim-footer .footer-company__cta-list li p {
-  font-family: 'Raleway';
+  font-family: 'Avenir';
   margin: 0;
   padding-left: 0.5rem;
   padding-top: 0.1rem;
@@ -581,8 +582,8 @@ header.is-sticky .header__menu {
           transform: translateX(-100%);
   height: 100vh;
   width: 100%;
-  max-width: 19rem;
-  padding: 2rem 0.5rem;
+  max-width: 18rem;
+  padding: 4rem 0.5rem;
   background-color: #282828;
   color: #f4f4f4;
   z-index: 1000;
@@ -602,6 +603,16 @@ header.is-sticky .header__menu.is-visible {
       -ms-transform: translateX(0);
           transform: translateX(0);
 }
+header.is-sticky .header__menu img {
+  color: #f4f4f4;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  margin-bottom: 4.5rem;
+}
 header.is-sticky .header__menu a {
   color: #f4f4f4;
   border-bottom: 1px solid #f4f4f4;
@@ -611,7 +622,8 @@ header.is-sticky .header__menu a:hover {
 }
 header.is-sticky .header__menu p {
   color: #f4f4f4;
-  margin-left: 2.5rem;
+  margin-top: 0;
+  margin-left: 1.5rem;
 }
 header.is-sticky .header__menu .menu__links {
   display: -webkit-box;
@@ -633,11 +645,12 @@ header.is-sticky .header__menu .menu__links {
   }
 }
 header.is-sticky .header__menu .menu__links li {
-  font-family: 'Raleway';
+  font-family: 'Avenir';
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0.5em;
-  margin-left: 1.5em;
+  margin-left: 1em;
+  padding-right: 4rem;
   font-size: 20px;
 }
 @media only screen and (min-width: 30em) {
@@ -703,9 +716,11 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   stroke: #fff;
 }
 .intro {
-  margin-left: 10rem;
-  margin-right: 10rem;
-  padding: 1rem 1rem 3rem 1rem;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
 }
 .intro__hed {
   max-width: 60rem;
@@ -719,6 +734,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   text-align: center;
 }
 .intro__byline {
+  font-family: "Avenir";
   max-width: 40rem;
   margin: 0 auto;
   margin-top: 1rem;
@@ -731,11 +747,15 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   margin-top: 1rem;
   text-align: center;
 }
+.intro__prelude {
+  font-family: "Avenir";
+}
 @font-face {
-  font-family: 'Avenir';
+  font-family: Avenir;
 }
 body {
-  padding: 5em;
+  padding: 5vw;
+  padding-bottom: 0em;
 }
 .wrapper {
   position: relative;
@@ -750,7 +770,7 @@ body {
   opacity: 0;
 }
 .bounds-background {
-  fill: #fff;
+  fill: rgba(255,0,255,0.067);
 }
 .rect {
   opacity: 0.25;
@@ -789,27 +809,32 @@ body {
   fill: transparent;
 }
 .autocomplete {
-  position: relative;
-  margin-right: 10rem;
-  margin-left: 10rem;
-  display: block;
+  position: absolute;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -91%);
+      -ms-transform: translate(-50%, -91%);
+          transform: translate(-50%, -91%);
+  font-size: 28px;
+  pointer-events: none;
+  z-index: 10000;
 }
 .typeahead {
-  width: 105px;
+  width: 200px;
   position: relative;
   opacity: 0;
   border: none;
-  z-index: 0;
+  z-index: 10000;
 }
 input[type=text] {
-  font-size: 1.2rem;
+  font-size: 28px;
+  font-family: 'Raleway';
   background-color: transparent;
-  width: 100%;
+  width: 355px;
   opacity: 1;
   outline-width: 0;
   text-align: center;
-  border: none;
-  border-bottom: 3px solid #808080;
+  border-bottom: none;
 }
 .typeahead.dropdown-menu,
 span.twitter-typeahead .tt-menu {
@@ -862,11 +887,67 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   max-width: 15rem;
 }
 #scrolly-side .scrolly article .step-intro {
-  min-height: 10vh;
+  min-height: 50vh;
+  margin-bottom: 3rem;
+  background-color: transparent;
+}
+#scrolly-side .scrolly article .step-outro {
+  min-height: 50vh;
+  margin-bottom: 0rem;
+  background-color: transparent;
+  -webkit-transition: background-color 250ms ease-in-out;
+  -o-transition: background-color 250ms ease-in-out;
+  transition: background-color 250ms ease-in-out;
+}
+#scrolly-side .scrolly article .step-outro:last-of-type {
+  margin-bottom: 0;
+}
+#scrolly-side .scrolly article .step-outro.is-active {
+  background-color: $secondary;
+}
+#scrolly-side .scrolly article .step-outro .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-height: 30%;
+}
+#scrolly-side .scrolly article .step-outro .large-image {
+  margin: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-height: 8rem;
+  max-width: 12rem;
+}
+#scrolly-side .scrolly article .step-outro .small-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 2%;
+  max-width: 30%;
+  max-height: 5rem;
+}
+#scrolly-side .scrolly article .step-outro p {
+  margin: 0;
+  font-family: Avenir;
+  color: #000;
+}
+#scrolly-side .scrolly article .step-outro h1 {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+  font-size: 24px;
+  font-family: "Avenir";
+}
+#scrolly-side .scrolly article .step-outro h2 {
+  margin: 0;
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+  font-size: 20px;
 }
 #scrolly-side .scrolly article .step {
   min-height: 50vh;
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
   background-color: transparent;
   -webkit-transition: background-color 250ms ease-in-out;
   -o-transition: background-color 250ms ease-in-out;
@@ -900,7 +981,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 }
 #scrolly-side .scrolly article .step p {
   margin: 0;
-  font-family: 'Avenir';
+  font-family: Avenir;
   color: #000;
 }
 #scrolly-side .scrolly article .step h1 {
@@ -908,7 +989,8 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   text-align: center;
   font-weight: 400;
   color: #000;
-  font-size: 20px;
+  font-size: 24px;
+  font-family: "Avenir";
 }
 #scrolly-side .scrolly article .step h2 {
   margin: 0;
@@ -925,6 +1007,14 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   margin: 0;
   top: 14vh;
   left: 0;
+}
+.interactive-wrapper {
+  position: fixed;
+  overflow: scroll;
+  right: 3rem;
+  height: 100vh;
+  width: 19rem;
+  pointer-events: none;
 }
 .historical-path {
   stroke-opacity: 1;
@@ -980,7 +1070,6 @@ button.toggle:focus {
   width: 100%;
 }
 #top-label {
-  font-family: 'Raleway';
   position: absolute;
   left: 50%;
   margin-right: -50%;
@@ -988,44 +1077,62 @@ button.toggle:focus {
       -ms-transform: translate(-50%, -150%);
           transform: translate(-50%, -150%);
   font-size: 28px;
+  border-bottom: 2px solid #808080;
 }
 .appendix {
-  margin-left: 10rem;
-  margin-right: 10rem;
-  padding: 1rem 1rem 3rem 1rem;
+  font-family: "Avenir";
+  margin-top: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
 }
 .appendix p {
-  font-size: 18px;
+  font-size: 16px;
 }
 .appendix h2 {
-  font-size: 24px;
+  font-weight: bold;
+  font-size: 18px;
 }
 .win-pct-label {
-  font-family: 'Raleway';
   vertical-align: middle;
 }
-.year-label {
-  font-family: Raleway;
-  font-weight: 200px
-}
-.bottom-text {
-  width: 40%;
-  height: 80px;
+.tooltip {
+  width: 8.5rem;
+  font-family: "Avenir";
+  opacity: 0;
+  left: 0;
+  display: block;
   position: absolute;
-  background-color: #fff;
-  -webkit-box-shadow: 0 0 7px 7px rgba(0,0,0,0.2);
-          box-shadow: 0 0 7px 7px rgba(0,0,0,0.2);
-  opacity: 90%;
-  top: 85%;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 999;
-  border-radius: 5px;
   text-align: center;
-  padding: 7px;
-  font-family: 'Avenir';
+  padding: 0.4em 0.6em 0.4em 0.6em;
+  background: #fff;
   font-size: 16px;
+  border: 1px solid #ddd;
+  z-index: 10;
+  pointer-events: none;
+  border-radius: 6px;
+}
+.tooltip-year {
+  margin-bottom: 0.4em;
+  font-weight: 600;
+  font-size: 16px;
+  border-bottom: 1px solid #808080;
+}
+.tooltip-record {
+  text-align: center;
+  margin-bottom: 0.2em;
+}
+.tooltip-win-pct {
+  text-align: center;
+}
+#win-pct-label {
+  font-size: 16px;
+  color: #585858;
+}
+#record-label {
+  font-size: 16px;
+  color: #585858;
+}
+.mobile-text {
+  visibility: hidden;
 }
