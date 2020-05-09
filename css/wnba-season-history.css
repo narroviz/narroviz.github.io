@@ -1136,3 +1136,10 @@ button.toggle:focus {
 .mobile-text {
   visibility: hidden;
 }
+.appendix-buffer:before {
+  border-top: 1px solid gray;
+  background: transparent;
+  height: 4rem;
+  display: block;
+  content: '';
+}

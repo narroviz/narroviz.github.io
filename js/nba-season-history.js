@@ -9004,6 +9004,7 @@ function _drawSeasonHistoryByMetric() {
                   d3.select("#basketball-team-input").style('display', 'block').attr('placeholder', '(Choose a team)');
                   d3.select("#interactive-wrapper").style("display", "block");
                   d3.select("#interactive-wrapper").style("display", "block").style("pointer-events", "all");
+                  d3.select(".tooltip").style("visibility", "visible");
 
                   if (teamConfig.length > 0) {
                     var currentTeam = $('#basketball-team-input').typeahead('val');
@@ -9038,6 +9039,8 @@ function _drawSeasonHistoryByMetric() {
                     d3.select("#basketball-team-input").style('display', 'none');
                     d3.select("#interactive-wrapper").style("display", "none");
                     d3.select("#top-label").style("display", "block");
+                    d3.select(".tooltip").style("visibility", "hidden");
+
                     highlightEraPaths(SEASON_HISTORY[index], teamData);
                     hideEraPaths(teamConfig);
                   } else if (index <= SEASON_HISTORY.length - 1) {
