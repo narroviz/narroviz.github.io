@@ -10156,7 +10156,7 @@ function init() {
     "hed": ""
   },
   {
-    "image": "wnba_season_paths_alt",
+    "image": "wnba_season_paths",
     "url": "html/wnba-season-history",
     "hed": "WNBA Season History"
   }, {

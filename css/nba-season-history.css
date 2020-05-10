@@ -1145,3 +1145,9 @@ button.toggle:focus {
 .mobile-text {
   visibility: hidden;
 }
+.link-text:hover {
+  text-decoration: none; 
+  color: #04A933;
+  font-weight: 700px;
+  border-bottom: 2px solid #04A933;
+}

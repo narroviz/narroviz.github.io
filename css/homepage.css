@@ -472,7 +472,7 @@ body, html {
   position: relative;
   margin-left: 1rem;
   margin-bottom: 3rem;
-  width: 150px;
+  width: 120px;
   text-align: left;
   border-bottom: 1px solid #282828;
   color: #282828;
@@ -483,7 +483,7 @@ body, html {
   flex-wrap: wrap;
 }
 
-.article-container {
+.section-container {
   max-width: 900px;
   position: relative;
   margin: auto;
@@ -503,20 +503,24 @@ body, html {
   overflow: hidden;
 }
 
-.article-item img:hover {
-  transform: scale(1.04);
+.article-item {
+  transition: transform .2s;
+}
+
+.article-item:hover {
+  transform: scale(1.03);
 }
 
 /*#11ded9 30%, #05e646 */
-.left-image img:hover {
+.left-image:hover img {
     -webkit-box-shadow: 0 0 7px 2px #11ded9;
           box-shadow: 0 0 7px 2px #11ded9;
 }
-.middle-image img:hover {
+.middle-image:hover img {
     -webkit-box-shadow: 0 0 7px 2px #0de1a5;
           box-shadow: 0 0 7px 2px #0de1a5;
 }
-.right-image img:hover {
+.right-image:hover img {
     -webkit-box-shadow: 0 0 7px 2px #05e646;
           box-shadow: 0 0 7px 2px #05e646;
 }
@@ -573,9 +577,11 @@ body, html {
   transform: translateY(0px);
   transition: .5s ease-in-out;
   text-transform: uppercase;
+  text-decoration: none;
  }
 
 .grid-article .article-item:hover p {
+  text-decoration: none;
   opacity: 1;
   transform: translateY(0);
  }
@@ -950,6 +956,13 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
     margin: 0;
 
   }
+
+.link-text:hover {
+  text-decoration: none; 
+  color: #04A933;
+  font-weight: 700px;
+  border-bottom: 2px solid #04A933;
+}
 .link-text-color {
   color: #fff;
 }
@@ -1008,3 +1021,4 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   display: block;
   margin: auto;
 }
+

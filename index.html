@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="./js/woopra.js"></script>
         <title>Wanderwhim</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -15,40 +16,35 @@
 
         <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <meta name='description' content='This is the article description.' />
+        <meta name='description' content='Visualizing unique datasets and ideas.' />
         <meta name='news_keywords' content='tk' />
         
         <meta property='og:title' content='Wanderwhim' />
         <meta property='og:site_name' content='Wanderwhim' />
-        <meta property='og:url' content='http://wanderwhim.com/year/month/name/' />
-        <meta property='og:description' content='This is the article description.' />
-        <meta property='og:type' content='article' />
+        <meta property='og:url' content='https://wanderwhim.com' />
+        <meta property='og:description' content='Visualizing unique datasets and ideas.' />
         <meta property='og:locale' content='en_US' />
-        
-        <meta property='og:image' content='' />
-        <meta property='og:image:type' content='image/jpeg' />
-        <meta property='og:image:width' content='1200' />
-        <meta property='og:image:height' content='600' />
+        <meta property='og:image' content='https://wanderwhim.com/assets/images/wanderwhim-official.png' />
         
         <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:site' content='http://wanderwhim.com' />
-        <meta name='twitter:creator' content='' />
+        <meta name='twitter:site' content='https://wanderwhim.com' />
+        <meta name='twitter:creator' content='wanderwhimdata' />
         <meta name='twitter:title' content='Wanderwhim' />
-        <meta name='twitter:description' content='This is the article description.' />
-        <meta name='twitter:image:src' content='' />
+        <meta name='twitter:description' content='Visualizing unique datasets and ideas.' />
+        <meta name='twitter:image:src' content='https://wanderwhim.com/assets/images/wanderwhim-official.png' />
         
-        <link rel='canonical' href='http://wanderwhim.com/year/month/name/' />
+        <link rel='canonical' href='https://wanderwhim.com' />
         
         <link rel='icon' type='image/png' sizes='32x32' href='./assets/images/favicon-inverse.png'>
         <link rel='icon' type='image/png' sizes='16x16' href='./assets/images/favicon-inverse.png'>
         <meta name='msapplication-TileColor' content='#ffc40d'>
         <meta name='theme-color' content='#ffffff'>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff' type='font/woff' as='font' crossorigin>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff' type='font/woff' as='font' crossorigin>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff' type='font/woff' as='font' crossorigin>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff' type='font/woff' as='font' crossorigin>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff' type='font/woff' as='font' crossorigin>
-        <link rel='preload' href='http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff' type='font/woff' as='font' crossorigin>
+        <link rel='preload' href='https://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff' type='font/woff' as='font' crossorigin>
         <link rel="stylesheet" href="./css/homepage.css">
         <style>
             /*
@@ -59,7 +55,7 @@
         
             @font-face {
                 font-family: 'Raleway';
-                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff');
+                src: url('https://wanderwhim.com/assets/fonts/raleway/Raleway-extralight.woff');
                 font-weight: 400;
                 font-style: normal;
                 font-stretch: normal;
@@ -68,7 +64,7 @@
         
             @font-face {
                 font-family: 'Raleway';
-                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff');
+                src: url('https://wanderwhim.com/assets/fonts/raleway/Raleway-medium.woff');
                 font-weight: 500;
                 font-style: normal;
                 font-stretch: normal;
@@ -77,7 +73,7 @@
         
             @font-face {
                 font-family: 'Raleway';
-                src: url('http://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff');
+                src: url('https://wanderwhim.com/assets/fonts/raleway/Raleway-heavy.woff');
                 font-weight: 700;
                 font-style: normal;
                 font-stretch: normal;
@@ -92,7 +88,7 @@
         
             @font-face {
                 font-family: 'Avenir';
-                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff');
+                src: url('https://wanderwhim.com/assets/fonts/avenir/Avenir-Light.woff');
                 font-weight: 400;
                 font-style: normal;
                 font-stretch: normal;
@@ -101,7 +97,7 @@
         
             @font-face {
                 font-family: 'Avenir';
-                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff');
+                src: url('https://wanderwhim.com/assets/fonts/avenir/Avenir-Medium.woff');
                 font-weight: 500;
                 font-style: normal;
                 font-stretch: normal;
@@ -110,7 +106,7 @@
         
             @font-face {
                 font-family: 'Avenir';
-                src: url('http://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff');
+                src: url('https://wanderwhim.com/assets/fonts/avenir/Avenir-Heavy.woff');
                 font-weight: 700;
                 font-style: normal;
                 font-stretch: normal;
@@ -122,15 +118,15 @@
 <body>    
     <div class="header-container" id="header-container">
         <header class='is-sticky'>
-            <a href='http://wanderwhim.com' target='_blank' class='logo'>
+            <a href='https://wanderwhim.com' class='logo'>
                 <img src="assets/images/wanderwhim-official-inverse.png" class="logo">
             </a>
             <div class='header__menu tk-national'>
-                        <p class='menu__tagline'><a href='http://wanderwhim.com' target='_blank'>Wanderwhim</a> is a creative visualization space built to explore unique datasets, topics, questions and ideas.</p>
+                        <p class='menu__tagline'><a href='https://wanderwhim.com'>Wanderwhim</a> is a creative visualization space built to explore unique datasets, topics, questions and ideas.</p>
                         <ul class='menu__links'>
-                            <li><a href='http://wanderwhim.com/#new' target='_blank'>What’s New</a></li>
-                            <!-- <li><a href='http://wanderwhim.com/archives' target='_blank'>All Essays</a></li> -->
-                            <li><a href='http://wanderwhim.com/about/' target='_blank'>About Us</a>
+                            <li><a href='#new'>What’s New</a></li>
+                            <!-- <li><a href='https://wanderwhim.com/archives' target='_blank'>All Essays</a></li> -->
+                            <li><a href='#about'>About Us</a>
                         </ul>
                         <img src="assets/images/wanderwhim-official-inverse.png" class="bottom-logo">
                     </div>
@@ -153,15 +149,15 @@
     <br> 
 
     <div class="grid-article" id="articles">
-        <div class="article-container">
+        <div class="section-container">
             <p class="section-title" id="new">What's New</p>
             <div class="article-row">
                 <div class="col-md-4">
                     <a href="html/wnba-season-history.html">
                         <div class="left-image article-item">
-                                <img src="assets/images/wnba_season_paths_alt.png">
+                                <img src="assets/images/wnba_season_paths.png">
                             <h1>WNBA<em>&nbsp;Season History</em></h1>
-                            <p>A Visual History of the WNBA</p>
+                            <!-- <p style="text-decoration: none;">A Visual History of the WNBA</p> -->
                         </div>
                     </a>
                 </div>
@@ -170,12 +166,12 @@
                         <div class="right-image article-item">
                                 <img src="assets/images/nba_season_paths.png">
                             <h1>NBA<em>&nbsp;Season History</em></h1>
-                            <p>A Visual History of the NBA</p>
+                            <!-- <p style="text-decoration: none;">A Visual History of the NBA</p> -->
                         </div>
                     </a>
                 </div>
 <!--                 <div class="col-md-4">
-                    <a href="http://wanderwhim.com">
+                    <a href="https://wanderwhim.com">
                         <div class="right-image article-item">
                             <img src="assets/images/wnba_random_walk.png">
                             <h1>WNBA<em>&nbsp;Random Walk</em></h1>
@@ -195,7 +191,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                    <a href="http://wanderwhim.com">
+                    <a href="https://wanderwhim.com">
                         <div class="middle-image article-item">
                                 <img src="assets/images/wnba_recordigami.png">
                             <h1>NBA<em>&nbsp;Recordigami</em></h1>
@@ -204,7 +200,7 @@
                     </a>
                 </div>
                 <div class="col-md-4">
-                	<a href="http://wanderwhim.com">
+                	<a href="https://wanderwhim.com">
                         <div class="right-image article-item">
                                 <img src="assets/images/wnba_random_walk.png">
                             <h1>NBA<em>&nbsp;Random Walk</em></h1>
@@ -231,32 +227,41 @@
         <br>
         <br>
     </div> -->
-
-    
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="section-container">
+        <p class="section-title" id="about">About Us</p>
+        <p style = "margin-left: 1rem;">Founded in 2020, Wanderwhim is a creative data visualization space built to explore all sorts of topics and datasets. The site was bootstrapped using open source templates provided by <a href="https://github.com/the-pudding/starter" class="link-text">The Pudding</a> and excellent educational resources such as Amelia Wattenberger's <a href="https://www.newline.co/fullstack-d3" class="link-text">Fullstack D3 &amp; Data Visualization</a>.</p>
+        <p style = "margin-left: 1rem;">In the early stages, we expect to release about 1 article per month and grow from there. If you want to help support the work being done at Wanderwhim, please visit <a href="https://www.patreon.com/wanderwhim?fan_landing=true" target='_blank' class="link-text">Patreon</a> to become a supporter. For just $1/month, you can help us create insightful and beautiful data stories!</p>
+    </div>
+    <br>
+    <br>
     <!-- <footer> -->
     <div class="footer-bg">
       <div class="overlay">
         <div class="footer">
           <!-- <div class="col-lg-2 col-sm-3"></div> -->
           <!-- Twitter -->
-          <a href="https://twitter.com/wanderwhimdata" class="col-md-3 logo-container">
+          <a href="https://twitter.com/wanderwhimdata" target='_blank' class="col-md-3 logo-container">
             <i class="fa fa-twitter fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Twitter</h4>
           </a>
 
           <!-- Facebook -->
-          <a href="https://www.facebook.com/wanderwhimdata/" class="col-md-3 logo-container">
+          <a href="https://www.facebook.com/wanderwhimdata/" target='_blank' class="col-md-3 logo-container">
             <i class="fa fa-facebook fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Facebook</h4>
           </a>
           <!-- Instagram -->
-          <a href="https://instagram.com/wanderwhimdata/" class="col-md-3 logo-container">
+          <a href="https://instagram.com/wanderwhimdata/" target='_blank' class="col-md-3 logo-container">
             <i class="fa fa-instagram fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Instagram</h4>
           </a>
 
           <!-- Patreon -->
-          <a href="https://www.patreon.com/wanderwhim" class="col-md-3 logo-container">
+          <a href="https://www.patreon.com/wanderwhim?fan_landing=true" target='_blank' class="col-md-3 logo-container">
             <i class="fa fa-patreon fa-3x logo" aria-hidden="true"></i>
             <h4 class="text-centered link-text-color">Patreon</h4>
           </a>
