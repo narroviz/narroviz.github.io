@@ -10115,7 +10115,7 @@ function loadJS(src, cb) {
 function loadStories(cb) {
   var request = new XMLHttpRequest();
   var v = Date.now();
-  var url = "http://wanderwhim.com/assets/data/stories.json?v=".concat(v);
+  var url = "https://wanderwhim.com/assets/data/stories.json?v=".concat(v);
   request.open("GET", url, true);
 
   request.onload = function () {
@@ -10134,7 +10134,7 @@ function loadStories(cb) {
 
 function createLink(d) {
   if (d.url !== " ") {
-    return "\n\t<a class='footer-recirc__article' href='http://wanderwhim.com/".concat(d.url, "' target='_blank' rel='noopener'>\n\t\t<img class='article__img' src='./../assets/images/").concat(d.image, ".png' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
+    return "\n\t<a class='footer-recirc__article' href='https://wanderwhim.com/".concat(d.url, "' target='_blank' rel='noopener'>\n\t\t<img class='article__img' src='./../assets/images/").concat(d.image, ".png' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
   } else {
     return "\n\t<a class='footer-recirc__article' target='_blank' rel='noopener'>\n\t\t<img class='article__img'".concat("' alt='").concat(d.hed, "'>\n\t\t<p class='article__headline'>").concat(d.hed, "</p>\n\t</a>\n\t");
   }
@@ -10156,7 +10156,7 @@ function init() {
     "hed": ""
   },
   {
-    "image": "wnba_season_paths_alt",
+    "image": "wnba_season_paths",
     "url": "html/wnba-season-history",
     "hed": "WNBA Season History"
   }, {
