@@ -362,9 +362,11 @@ body, html {
     font-weight: 700px;
 }
 
+
 .logo-container h4 {
     color: inherit;
     font-size: 20px;
+    margin-top: 2px;
 }
 
 .logo-container:hover {
