@@ -1022,3 +1022,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   margin: auto;
 }
 
+#new, #about {
+  padding-top: 75px;
+  margin-top: -75px;
+}
