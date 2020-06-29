@@ -505,7 +505,6 @@ body, html {
 
 .article-item img {
   border-radius: 50%;
-  /*border:1px solid #e8e8e8;  */
   -moz-border-radius:50%;
   -webkit-border-radius:50%;
   width: 100%;
