@@ -169,6 +169,7 @@
 	                Visually inspired by <a class="link-text" target="_blank" href="https://www.reddit.com/r/westworld/comments/fw37d5/what_is_the_divergence_thing/">Westworld's divergence visualization</a>, I created a circular visualization of the entire world's elevation. All of its immense ups and downs in one chart. Type any starting place below and explore!
 	            </p>
         	</div>
+        </div>
 
 		<input id="autocomplete" placeholder="Enter any location" type="text" class="form-control">
 		<text id="longitude" value=""></text>
@@ -196,13 +197,15 @@
 
 
 		<div class='intro' id="appendix" style="font-family: 'Avenir'">
-			<h2>Data Story</h2>
-			<p>I started my story with global elevation data which came from <a class="link-text" target="_blank" href="https://www.ngdc.noaa.gov/mgg/global/">NOAA</a>. To calculate values, they made a grid of the Earth and averaged elevation for each rectangle of the grid. They split the Earth into 21,600 vertical slices of longitude (representing 1 <a class="link-text" target="_blank" href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc">arc-minute</a> each) and 10,800 horizontal slices of latitude. Due to the curvature of the Earth, these curved grid rectangles are approximately 1 mile by 1 mile at Equator, and like a thinning ribbon, they converge to 0 miles wide at each of the poles.<br><br>
+			<div class='intro__prelude'>
+				<h2>Data Story</h2>
+				<p>I started my story with global elevation data which came from <a class="link-text" target="_blank" href="https://www.ngdc.noaa.gov/mgg/global/">NOAA</a>. To calculate values, they made a grid of the Earth and averaged elevation for each rectangle of the grid. They split the Earth into 21,600 vertical slices of longitude (representing 1 <a class="link-text" target="_blank" href="https://en.wikipedia.org/wiki/Minute_and_second_of_arc">arc-minute</a> each) and 10,800 horizontal slices of latitude. Due to the curvature of the Earth, these curved grid rectangles are approximately 1 mile by 1 mile at Equator, and like a thinning ribbon, they converge to 0 miles wide at each of the poles.<br><br>
 
-			To combine those vertical longitude slices with land/water, I next found <a class="link-text" target="_blank" href="https://en.wikipedia.org/wiki/Shapefile">shapefiles</a>. In the geospatial world, shapefiles are file formats that outline the boundaries of any shape and often carry metadata. I found maritime shapefile data from <a class="link-text" target="_blank" href="https://www.marineregions.org/">Marine Regions</a> and country shapefile data from <a class="link-text" target="_blank" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth</a>. After converting longitude slices into shapefiles as well, I overlayed each slice on top of land and water files, found intersections and unified the data. After that, it was a matter of visualizing the data.<br><br>
+				To combine those vertical longitude slices with land/water, I next found <a class="link-text" target="_blank" href="https://en.wikipedia.org/wiki/Shapefile">shapefiles</a>. In the geospatial world, shapefiles are file formats that outline the boundaries of any shape and often carry metadata. I found maritime shapefile data from <a class="link-text" target="_blank" href="https://www.marineregions.org/">Marine Regions</a> and country shapefile data from <a class="link-text" target="_blank" href="https://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Natural Earth</a>. After converting longitude slices into shapefiles as well, I overlayed each slice on top of land and water files, found intersections and unified the data. After that, it was a matter of visualizing the data.<br><br>
 
-			Building off this article, I'm also working on a <a class="link-text" target="_blank" href="https://native-land.ca/territory-acknowledgement/">territory acknowledgment</a> article that can help highlight the native lands that modern countries occupy. For this article, I'm applying the same method above and using native territory shapefiles from the <a class="link-text" target="_blank" href="https://native-land.ca/">Native Land</a> project. The data is highly detailed for North America and Australia, but largely absent from other parts of the world, so I'm working to find other sources and help expand the Native Land repository.<br><br>
-			</p>
+				Building off this article, I'm also working on a <a class="link-text" target="_blank" href="https://native-land.ca/territory-acknowledgement/">territory acknowledgment</a> article that can help highlight the native lands that modern countries occupy. For this article, I'm applying the same method above and using native territory shapefiles from the <a class="link-text" target="_blank" href="https://native-land.ca/">Native Land</a> project. The data is highly detailed for North America and Australia, but largely absent from other parts of the world, so I'm working to find other sources and help expand the Native Land repository.<br><br>
+				</p>
+			</div>
 		</div>
 
 	</main>
