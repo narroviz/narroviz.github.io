@@ -1043,3 +1043,24 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   padding-top: 75px;
   margin-top: -75px;
 }
+
+.visible-device {
+  display: none;
+}
+.visible-desktop {
+  display: display;
+}
+
+@media (max-width : 450px) {
+    .visible-device {
+      display: block;
+    }
+    .visible-desktop {
+      display: none;
+    }
+}
+
+.header-push {
+  width: 100%;
+  height: 4.1rem;
+}
