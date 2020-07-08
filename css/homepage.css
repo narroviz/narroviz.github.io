@@ -218,6 +218,7 @@ td {
   margin: 0 auto;
 }
 body {
+  display: block !important;
   -webkit-font-feature-settings: 'kern' 1, 'onum' 0, 'liga' 0, 'tnum' 1;
           font-feature-settings: 'kern' 1, 'onum' 0, 'liga' 0, 'tnum' 1;
   -webkit-font-smoothing: antialiased;
@@ -1150,3 +1151,4 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   width: 100%;
   height: 4.1rem;
 }
+#loadOverlay{display: none;}
