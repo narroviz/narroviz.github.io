@@ -1059,6 +1059,12 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
     .visible-desktop-flex {
         display: none;
     }
+    .footer-bg {
+      height: 100px;
+    }
+    .footer-bg .overlay {
+      height: 100px;
+    }
 }
 .logo-container-mobile {
     margin: 5px;

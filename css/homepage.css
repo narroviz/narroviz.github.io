@@ -1195,6 +1195,12 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
     .visible-desktop-flex {
       display: none;
     }
+    .footer-bg {
+      height: 100px;
+    }
+    .footer-bg .overlay {
+      height: 100px;
+    }
 }
 
 .header-push {
