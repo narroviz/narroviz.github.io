@@ -953,12 +953,18 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   width: 100%;
   min-height: 100%;
   height: 100%;
-/*  -webkit-filter: blur(5px);
-  -moz-filter: blur(5px);
-  -o-filter: blur(5px);
-  -ms-filter: blur(5px);
-  filter: blur(5px);*/
 }
+
+@media (max-width : 450px) {
+  #particles-js  {
+    -webkit-filter: blur(0.5px);
+    -moz-filter: blur(0.5px);
+    -o-filter: blur(0.5px);
+    -ms-filter: blur(0.5px);
+    filter: blur(0.5px);
+  }
+}
+
 .text-center {
   text-align: center !important; }
 .row {
@@ -968,6 +974,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
+
 .slider-text {
   display:flex;
   flex-flow:column;
@@ -1107,5 +1114,5 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 
 .header-push {
   width: 100%;
-  height: 4.1rem;
+  height: 4.5rem;
 }
