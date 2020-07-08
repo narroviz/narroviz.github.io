@@ -1050,7 +1050,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   .slider-text-mobile h1 {
     text-align: center;
     font-size: 17vw;
-    font-weight: 500 !important;
+    font-weight: 100 !important;
     margin: 0;
   }
   .slider-text-mobile h2 {
