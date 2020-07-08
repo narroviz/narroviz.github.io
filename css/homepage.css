@@ -957,11 +957,11 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 
 @media (max-width : 450px) {
   #particles-js  {
-    -webkit-filter: blur(0.5px);
-    -moz-filter: blur(0.5px);
-    -o-filter: blur(0.5px);
-    -ms-filter: blur(0.5px);
-    filter: blur(0.5px);
+    -webkit-filter: blur(1px);
+    -moz-filter: blur(1px);
+    -o-filter: blur(1px);
+    -ms-filter: blur(1px);
+    filter: blur(1px);
   }
 }
 
@@ -997,13 +997,14 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 }
   .slider-text h1 {
     font-size:  min(10vw, 130px);
-    font-weight: 100;
+    font-weight: 500;
+    font-style: normal;
     margin: 0;
   }
   .slider-text h2 {
     font-size: min(5vw, 55px);
     line-height: 1.2;
-    font-weight: 300;
+    font-weight: 500;
     margin: 0;
 
   }
@@ -1114,5 +1115,5 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 
 .header-push {
   width: 100%;
-  height: 4.5rem;
+  height: 4.1rem;
 }
