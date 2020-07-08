@@ -996,14 +996,14 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   color: #fff;
 }
   .slider-text-mobile h1 {
-    font-size: 4.9vh;
+    font-size: 4vh;
     font-weight: 500 !important;
     margin: 0;
   }
   .slider-text-mobile h2 {
     font-size: min(5vw, 55px);
     line-height: 1.2;
-    font-weight: 300;
+    font-weight: 500 !important;
     margin: 0;
 
   }
