@@ -918,6 +918,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   text-align: center;
 }
 .gradient-bg {
+  background: white;
   width: 100%;
   min-height: 100%;
   height: 100%;
@@ -926,6 +927,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   overflow: hidden;
 }
   .gradient-bg .overlay {
+    background: white;
     position: relative;
     width: 100%;
     min-height: 100%;
@@ -945,6 +947,7 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#11ded9', endColorstr='#05e646', GradientType=1 ); }
 
 #particles-js {
+  background: none;
   position: absolute;
   overflow: hidden;
   top: 0;
