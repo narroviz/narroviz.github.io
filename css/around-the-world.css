@@ -855,13 +855,6 @@ body {
     display: block;
 }
 #autocomplete {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    border-style:solid;
-    outline: none;
     position: absolute;
     border: none;
     border-bottom: 1px solid #aaa;
@@ -869,9 +862,6 @@ body {
     min-width: 250px;
     left: 50%;
     margin-right: -50%;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
     -webkit-transform: translate(-50%, 75%);
     -ms-transform: translate(-50%, 75%);
     transform: translate(-50%, 75%);
