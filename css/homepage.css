@@ -355,10 +355,19 @@ body, html {
 }
 
 .logo {
-    max-width: 50px
+    max-width: 50px;
     display: block;
     position: relative;
     margin: 0px;
+    color: inherit;
+    font-weight: 700px;
+}
+
+.mobile-logo {
+    max-width: 120px;
+    display: block;
+    position: relative;
+    /*margin: 0px;*/
     color: inherit;
     font-weight: 700px;
 }
@@ -662,8 +671,8 @@ body, html {
 
 .header-container {
   width: 100%;
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: 100%;
+  /*height: calc(var(--vh, 1vh) * 100);*/
 }
 header {
   z-index: 1000;
@@ -678,7 +687,7 @@ header {
 header a.logo {
   display: block;
   border: none;
-  max-width: 3rem;
+  max-width: 20rem;
   margin: 1rem auto;
 }
 header a.logo svg {
@@ -702,6 +711,7 @@ header.is-sticky {
       -ms-flex-align: center;
           align-items: center;
 }
+
 header.is-sticky a.logo {
   margin: 0 auto;
 }
@@ -718,6 +728,15 @@ header.is-sticky .header__toggle {
   z-index: 1000;
   border: none;
   background-color: transparent;
+}
+
+@media (max-width : 450px) {
+  header.is-sticky {
+    height: 4.5rem;
+  }
+  header.is-sticky .header__toggle {
+    padding-top: 1.5rem;
+  }
 }
 header.is-sticky .header__toggle svg {
   stroke: #282828;
@@ -979,20 +998,48 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   flex-wrap: wrap;
 }
 
+.intro-button {  
+  display:flex;
+  flex-flow:column;
+  justify-content: center;
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2.5rem;
+  position: absolute;
+
+  width: 60%;
+  height: 2.5rem;
+  background-color: #fff;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 5vw;
+  font-weight: 700 !important;
+}
+
+.intro-button a {
+  color: #05e646;
+}
+
+.intro-button:hover a {
+  color: #11ded9;
+}
+
 .slider-text-mobile {
   display:flex;
   flex-flow:column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  
   position: absolute;
-  margin: auto;
   width: 100%;
   min-height: 100%;
   height: 100%;
-  /*top: 1rem;*/
   pointer-events: none;
   left: 0;
   right: 0;
@@ -1000,7 +1047,8 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   color: #fff;
 }
   .slider-text-mobile h1 {
-    font-size: 4.9vh;
+    text-align: center;
+    font-size: 17vw;
     font-weight: 500 !important;
     margin: 0;
   }
@@ -1012,7 +1060,6 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 
   }
 
-
 .slider-text {
   display:flex;
   flex-flow:column;
@@ -1022,11 +1069,10 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
   margin: auto;
   
   position: absolute;
-  margin: auto;
+  margin: 0;
   width: 100%;
   min-height: 100%;
   height: 100%;
-  /*top: 1rem;*/
   pointer-events: none;
   left: 0;
   right: 0;

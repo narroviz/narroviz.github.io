@@ -14,9 +14,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-        
-        <!-- <link rel="stylesheet" href="assets/fonts/fork-awesome/css/fork-awesome.min.css"> -->
-
         <link href="https://fonts.googleapis.com/css?family=Kanit:100,200,300,400,500,600,700,800,900" rel="stylesheet">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <meta name='description' content='Visualizing unique datasets and ideas.' />
@@ -122,7 +119,12 @@
     <div class="header-container" id="header-container">
         <header class='is-sticky'>
             <a href='https://wanderwhim.com' class='logo'>
-                <img src="assets/images/wanderwhim-official-inverse.png" class="logo">
+                <div class="visible-desktop-flex">
+                    <img src="assets/images/wanderwhim-official-inverse.png" class="logo">
+                </div>
+                <div class="visible-device-flex">
+                    <img src="assets/images/wanderwhim-official-combined.png" class="mobile-logo">
+                </div>
             </a>
             <div class='header__menu tk-national'>
                         <p class='menu__tagline'><a href='https://wanderwhim.com'>Wanderwhim</a> is a creative visualization space built to explore unique datasets, topics, questions and ideas.</p>
@@ -142,30 +144,26 @@
         <div class="gradient-bg">
             <div class="overlay">
                 <div id="particles-js"></div>
-                <div class="slider-text visible-desktop">
+                <div class="slider-text visible-desktop-flex">
                         <h1 style="font-size: 9.1vw">W A N D E R W H I M</h1>
                         <h2>Visualizing unique datasets and ideas</h2>
                 </div>
-                <div class="slider-text-mobile visible-device">
-                    <div class="header-push"></div>
-                    <h1>W</h1>
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A</h1>
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N</h1>
-                    <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D</h1>
-                    <h1>E</h1>
-                    <h1>R&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h1>W&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h1>H&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h1>I&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h1>
-                    <h1>M</h1>
-                    <h2>Visualizing unique datasets and ideas</h2>
+                <div class="visible-device-flex">
+                    <div class="slider-text-mobile">
+                        <h1>Creating</h1>
+                        <h1>Visual</h1>
+                        <h1>Data</h1>
+                        <h1>Stories</h1>
+                    </div>
+                    <a class="intro-button" onMouseOver="this.style.color='#11ded9'" onMouseOut="this.style.color='#05e646'" style="color: #05e646; text-decoration: none; border: none;" target="_blank" href="https://www.patreon.com/wanderwhim?#reactTarget">FUND US ON PATREON</a>
                 </div>
+                
             </div>
         </div>
     </div>
     <br>
-    <br>
-
+<!--     <br>
+ -->
     <div class="grid-article" id="articles">
         <div class="section-container">
             <p class="section-title" id="new">What's New</p>
