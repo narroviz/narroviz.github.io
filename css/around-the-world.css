@@ -855,6 +855,11 @@ body {
     display: block;
 }
 #autocomplete {
+    box-shadow: none !important;
+    border-radius: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     position: absolute;
     border: none;
     border-bottom: 1px solid #aaa;
@@ -867,6 +872,7 @@ body {
     transform: translate(-50%, 75%);
     font-size: 28px;
     z-index: 10000;
+    outline: none;
 }
 .typeahead {
     width: 200px;
