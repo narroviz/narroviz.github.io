@@ -10151,11 +10151,10 @@ function recircHTML() {
 function init() {
   storyData = [
   {
-    "image": "",
-    "url": " ",
-    "hed": ""
-  },
-  {
+    "image": "elevation_ridgelines",
+    "url": "html/elevation-ridgelines",
+    "hed": "Elevation Ridgelines"
+  },  {
     "image": "around_the_world",
     "url": "html/around-the-world",
     "hed": "Around the World"
@@ -10169,11 +10168,7 @@ function init() {
     "url": "html/nba-season-history",
     "hed": "NBA Season History"
   },
-  {
-    "image": "",
-    "url": " ",
-    "hed": ""
-  }];
+];
   recircHTML();
 }
 
