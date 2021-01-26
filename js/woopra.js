@@ -3,6 +3,6 @@ var t,i,e,n=window,o=document,a=arguments,s="script",r=["config","track","identi
 })("woopra");
 
 woopra.config({
-  domain: 'wanderwhim.com'
+  domain: 'narro.design'
 });
 woopra.track();
