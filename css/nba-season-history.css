@@ -1038,7 +1038,8 @@ button.toggle:focus {
   color: #fff;
 }
 .logo {
-    max-width: 50px
+    max-width: 50px;
+    max-height: 50px;
     display: block;
     position: relative;
     margin: 0px;

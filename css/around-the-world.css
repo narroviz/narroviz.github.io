@@ -342,6 +342,7 @@ sub {
 }
 .logo {
     max-width: 50px;
+    max-height: 50px;
     display: block;
     position: relative;
     margin: auto;
@@ -644,6 +645,7 @@ body {
     border: none;
     border-bottom: 1px solid #aaa;
     width: 40%;
+    min-height: 40px;
     min-width: 250px;
     left: 50%;
     margin-right: -50%;
