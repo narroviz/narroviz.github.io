@@ -8719,12 +8719,12 @@ function _setConfig() {
               NUM_GAMES = 34;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 5;
-              DEFAULT_TEAM = "Atlanta Dream";
-              PADDING = 2;
+              DEFAULT_TEAM = "Washington Mystics";
+              PADDING = 1.5;
               BEST_WINS = 29;
               MEDIOCRE_WINS = 17;
               WORST_WINS = 4;
-              FONT_SIZE = 15;
+              FONT_SIZE = 10;
             } else if (league == NBA) {
               START_YEAR = 1946;
               END_YEAR = 2021;
@@ -8969,15 +8969,18 @@ function _drawSeasonPaths() {
             suggestionGroup.on("click", onSuggestionClick); // d3.select("#autocomplete").on("keydown", onAutocompleteKeydown)
 
             d3.select("#nba-autocomplete").style("transform", "translate(".concat(dimensions.width / 4, "px, ").concat(dimensions.margin.top / 2, "px)"));
-            drawSeasonPathsByTeam(league, DEFAULT_TEAM, seasonData, teamData, wrapper, bounds, dimensions, tiles, tilesGroup, yearIntervals, xScale, yScale);
-            d3.select("#basketball-team-input").property('value', DEFAULT_TEAM);
+            drawSeasonPathsByTeam(league, "", seasonData, teamData, wrapper, bounds, dimensions, tiles, tilesGroup, yearIntervals, xScale, yScale);
+            d3.select(".typeahead").style("border", "1px solid #828282").style("border-radius", '30px');
+            d3.select("#basketball-team-input").style("color", '#828282');
+            d3.select("#nba-autocomplete").style("display", "block");
+            d3.select("#basketball-team-input").property('value', "Choose your team");
             $('#basketball-team-input').on('typeahead:selected', function (e, team) {
               drawSeasonPathsByTeam(league, team, seasonData, teamData, wrapper, bounds, dimensions, tiles, tilesGroup, yearIntervals, xScale, yScale);
               DEFAULT_TEAM = team;
               d3.select("#basketball-team-input").property('value', DEFAULT_TEAM);
             });
 
-          case 17:
+          case 20:
           case "end":
             return _context2.stop();
         }
@@ -9523,8 +9526,11 @@ function _drawSeasonPathsByTeam() {
             primaryColor = teamData[filterTeam]['primary_color'];
             secondaryColor = teamData[filterTeam]['secondary_color'];
             d3.select("#basketball-team-input").style("color", primaryColor);
-            d3.select("#nba-autocomplete").style("display", "block");
-            d3.select(".autocomplete").style("border-bottom", "1px solid ".concat(secondaryColor));
+            d3.select("#nba-autocomplete").style("display", "block"); // d3.select(".autocomplete")
+            //  .style("border", `1px solid ${secondaryColor}`)
+            //  .style("border-radius", '30px')
+
+            d3.select(".typeahead").style("border", "1px solid ".concat(secondaryColor)).style("border-radius", '30px');
             numTeamColors = yearIntervals.length;
             primaryTeamColors = makeColors(primaryColor, 0, numTeamColors, 0.8);
             secondaryTeamColors = makeColors(secondaryColor, 0, numTeamColors, 0.8);
@@ -11786,7 +11792,7 @@ function _drawExplanatoryGraph() {
                 }
               };
             } else {
-              // Phoenix Mercury (2014)
+              // Atlanta Dream (2008)
               worstSeason = {
                 "0000": {
                   "win": 0,
@@ -11985,7 +11991,7 @@ function _drawExplanatoryGraph() {
               }
             });
 
-          case 77:
+          case 76:
           case "end":
             return _context5.stop();
         }
@@ -12062,9 +12068,9 @@ function createLink(d) {
 
 function recircHTML() {
   var storyData = [{
-    "image": "nba_season_triangle",
-    "url": "html/nba-season-triangle",
-    "hed": "NBA Season Triangle"
+    "image": "wnba_season_triangle",
+    "url": "html/wnba-season-triangle",
+    "hed": "WNBA Season Triangle"
   }, {
     "image": "wnba_season_paths",
     "url": "html/wnba-season-history",
@@ -12083,7 +12089,7 @@ function recircHTML() {
 
 function init() {
   loadStories(function (data) {
-    storyData = data;
+    storyData
     recircHTML();
   });
 }
