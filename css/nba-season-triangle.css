@@ -1274,6 +1274,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
     padding: 1rem;
   }
   #scrolly-side .scrolly article {
+    z-index: 100;
     padding: 0;
     width: 90vw;
     max-width: 400px;
