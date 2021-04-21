@@ -12068,9 +12068,9 @@ function createLink(d) {
 
 function recircHTML() {
   var storyData = [{
-    "image": "wnba_season_triangle",
-    "url": "html/wnba-season-triangle",
-    "hed": "WNBA Season Triangle"
+    "image": "nba_season_triangle",
+    "url": "html/nba-season-triangle",
+    "hed": "NBA Season Triangle"
   }, {
     "image": "wnba_season_paths",
     "url": "html/wnba-season-history",
