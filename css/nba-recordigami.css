@@ -690,13 +690,13 @@ header {
   font-family: 'Raleway';
   font-weight: 200;
 }
-header a.logo {
+header a.logo-company {
   display: block;
   border: none;
   max-width: 3rem;
   margin: 1rem auto;
 }
-header a.logo svg {
+header a.logo-company svg {
   fill: #282828;
   display: block;
   width: 100%;
@@ -716,7 +716,7 @@ header.is-sticky {
       -ms-flex-align: center;
           align-items: center;
 }
-header.is-sticky a.logo {
+header.is-sticky a.logo-company {
   margin: 0 auto;
 }
 header.is-sticky .header__toggle {
