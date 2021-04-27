@@ -959,6 +959,8 @@ body {
 .wrapper-container {
   height: 80vh;
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative;
   margin: 0 auto;
 }
@@ -1420,6 +1422,8 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 .text {
   margin: 0 auto;
   padding: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
   max-width: 1000px;
 }
 .text__hed {

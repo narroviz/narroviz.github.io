@@ -8720,11 +8720,11 @@ function _setConfig() {
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 5;
               DEFAULT_TEAM = "Washington Mystics";
-              PADDING = 1.5;
+              PADDING = 2;
               BEST_WINS = 29;
               MEDIOCRE_WINS = 17;
               WORST_WINS = 4;
-              FONT_SIZE = 10;
+              FONT_SIZE = 15;
             } else if (league == NBA) {
               START_YEAR = 1946;
               END_YEAR = 2021;
