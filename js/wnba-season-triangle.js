@@ -8720,11 +8720,11 @@ function _setConfig() {
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 5;
               DEFAULT_TEAM = "Washington Mystics";
-              PADDING = 2;
+              PADDING = 1.5;
               BEST_WINS = 29;
               MEDIOCRE_WINS = 17;
               WORST_WINS = 4;
-              FONT_SIZE = 15;
+              FONT_SIZE = 10;
             } else if (league == NBA) {
               START_YEAR = 1946;
               END_YEAR = 2021;
@@ -12061,9 +12061,9 @@ function createLink(d) {
 
 function recircHTML() {
   var storyData = [{
-    "image": "nba_season_triangle",
-    "url": "html/nba-season-triangle",
-    "hed": "NBA Season Triangle"
+    "image": "wnba_season_triangle",
+    "url": "html/wnba-season-triangle",
+    "hed": "WNBA Season Triangle"
   }, {
     "image": "wnba_season_paths",
     "url": "html/wnba-season-history",
