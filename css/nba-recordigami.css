@@ -682,6 +682,7 @@ footer.narro-footer .footer-company__about svg {
 }
 header {
   z-index: 1000;
+  transform: translate3d(0, 0, 1000px);
   position: absolute;
   top: 0;
   left: 0;
@@ -705,6 +706,7 @@ header.is-sticky {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   background-color: #fff;
   -webkit-box-shadow: 0 0 7px 1px #c9c9c9;
           box-shadow: 0 0 7px 1px #c9c9c9;
@@ -723,6 +725,7 @@ header.is-sticky .header__toggle {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   top: 0;
   left: 0;
   padding: 0.75rem;
