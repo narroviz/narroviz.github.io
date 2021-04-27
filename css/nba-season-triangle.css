@@ -689,6 +689,7 @@ header {
   background-color: #fff;
   font-family: 'Raleway';
   font-weight: 200;
+  transform: translate3d(0, 0, 1000px);
 }
 header a.logo {
   display: block;
@@ -705,6 +706,7 @@ header.is-sticky {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   background-color: #fff;
   -webkit-box-shadow: 0 0 7px 1px #c9c9c9;
           box-shadow: 0 0 7px 1px #c9c9c9;
@@ -723,6 +725,7 @@ header.is-sticky .header__toggle {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   top: 0;
   left: 0;
   padding: 0.75rem;
@@ -1138,6 +1141,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 }
 #scrolly-side .scrolly article {
   max-width: 15rem;
+  transform: translate3d(0, 0, 200px);
 }
 #scrolly-side .scrolly article .step-intro {
   min-height: 1vh;
@@ -1276,6 +1280,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
     max-width: 400px;
     margin: 0 auto;
     position: relative;
+    transform: translate3d(0, 0, 200px);
   }
   #scrolly-side .scrolly article .step-intro {
     max-height: 1vh;

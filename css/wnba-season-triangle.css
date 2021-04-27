@@ -689,6 +689,7 @@ header {
   background-color: #fff;
   font-family: 'Raleway';
   font-weight: 200;
+  transform: translate3d(0, 0, 1000px);
 }
 header a.logo {
   display: block;
@@ -705,6 +706,7 @@ header.is-sticky {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   background-color: #fff;
   -webkit-box-shadow: 0 0 7px 1px #c9c9c9;
           box-shadow: 0 0 7px 1px #c9c9c9;
@@ -723,6 +725,7 @@ header.is-sticky .header__toggle {
   position: fixed;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 1000px);
   top: 0;
   left: 0;
   padding: 0.75rem;
@@ -898,8 +901,8 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 }
 .intro {
   margin: 0 auto;
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 1rem;
   max-width: 1000px;
 }
@@ -937,11 +940,8 @@ body {
 }
 @media (max-width: 1000px) {
   body {
+    padding: 0vw;
     padding-top: 5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    padding-bottom: 0em;
-    margin: auto;
   }
 }
 @font-face {
@@ -1133,7 +1133,6 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   margin-right: 0rem;
   margin-left: 0rem;
   background-color: transparent;
-  padding: 1rem;
 }
 #scrolly-side .scrolly > * {
   -webkit-box-flex: 1;
@@ -1142,6 +1141,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 }
 #scrolly-side .scrolly article {
   max-width: 15rem;
+  transform: translate3d(0, 0, 200px);
 }
 #scrolly-side .scrolly article .step-intro {
   min-height: 1vh;
@@ -1276,10 +1276,11 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   #scrolly-side .scrolly article {
     z-index: 100;
     padding: 0;
-    width: 90vw;
+    width: 100%;
     max-width: 400px;
     margin: 0 auto;
     position: relative;
+    transform: translate3d(0, 0, 200px);
   }
   #scrolly-side .scrolly article .step-intro {
     max-height: 1vh;
