@@ -8765,6 +8765,9 @@ function drawBaseTiles(league) {
   var wrapperWidth = d3.select(wrapperId).node().offsetWidth;
   var wrapperHeight = d3.select(wrapperId).node().offsetHeight;
   var width = d3.min([1 * wrapperWidth, 1 * wrapperHeight]);
+  if (_isMobile.default.any()) {
+    width = d3.min([.9 * wrapperWidth, .9 * wrapperHeight]);
+  }
   var dimensions = {
     width: width,
     height: width,

@@ -8725,6 +8725,10 @@ function _setConfig() {
               MEDIOCRE_WINS = 17;
               WORST_WINS = 4;
               FONT_SIZE = 15;
+              if (_isMobile.default.any()) {
+                PADDING = 1;
+                FONT_SIZE = 10;
+              }
             } else if (league == NBA) {
               START_YEAR = 1946;
               END_YEAR = 2021;
@@ -8765,6 +8769,9 @@ function drawBaseTiles(league) {
   var wrapperWidth = d3.select(wrapperId).node().offsetWidth;
   var wrapperHeight = d3.select(wrapperId).node().offsetHeight;
   var width = d3.min([1 * wrapperWidth, 1 * wrapperHeight]);
+  if (_isMobile.default.any()) {
+    width = d3.min([.9 * wrapperWidth, .9 * wrapperHeight]);
+  }
   var dimensions = {
     width: width,
     height: width,
