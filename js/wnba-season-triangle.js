@@ -8949,13 +8949,6 @@ function _drawSeasonPaths() {
             //  }
             // }
 
-            $('.typeahead').on('focus', function () {
-              $(this).parent().siblings().addClass('active');
-            }).on('blur', function () {
-              if (!$(this).val()) {
-                $(this).parent().siblings().removeClass('active');
-              }
-            });
             $('#basketball-team-input').typeahead({
               hint: true,
               highlight: true,
@@ -8973,7 +8966,7 @@ function _drawSeasonPaths() {
             d3.select(".typeahead").style("border", "1px solid #828282").style("border-radius", '30px');
             d3.select("#basketball-team-input").style("color", '#828282');
             d3.select("#nba-autocomplete").style("display", "block");
-            d3.select("#basketball-team-input").property('value', "Choose your team");
+            d3.select("#basketball-team-input").property('value', "");
             $('#basketball-team-input').on('typeahead:selected', function (e, team) {
               drawSeasonPathsByTeam(league, team, seasonData, teamData, wrapper, bounds, dimensions, tiles, tilesGroup, yearIntervals, xScale, yScale);
               DEFAULT_TEAM = team;
