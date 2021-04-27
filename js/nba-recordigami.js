@@ -9830,6 +9830,7 @@ function _updateChart() {
               if (stage === "enter") {
                 d3.selectAll(".logo").style("display", "block");
                 d3.select(".sticky").style("pointer-events", "all");
+                d3.select(".article").style("visibility", "hidden");
                 d3.selectAll("*[id^=num-recordigami]").style("opacity", 1).style("display", "block");
                 d3.select("#basketball-autocomplete").style("visibility", "visible");
 
@@ -9842,6 +9843,7 @@ function _updateChart() {
               if (stage === "exit") {
                 d3.selectAll(".logo").style("display", "none");
                 d3.select(".sticky").style("pointer-events", "none");
+                d3.select(".article").style("visibility", "visible");
                 d3.selectAll("*[id^=num-recordigami]").style("opacity", 0).style("display", "none");
                 d3.select("#basketball-autocomplete").style("visibility", "hidden");
                 d3.select(".exit-icon").style("visibility", "hidden").style("pointer-events", "none");
