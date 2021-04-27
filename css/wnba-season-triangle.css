@@ -901,8 +901,8 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 }
 .intro {
   margin: 0 auto;
-  padding-left: 0rem;
-  padding-right: 0rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 1rem;
   max-width: 1000px;
 }
@@ -940,11 +940,8 @@ body {
 }
 @media (max-width: 1000px) {
   body {
+    padding: 0vw;
     padding-top: 5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    padding-bottom: 0em;
-    margin: auto;
   }
 }
 @font-face {
@@ -1138,7 +1135,6 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   margin-right: 0rem;
   margin-left: 0rem;
   background-color: transparent;
-  padding: 1rem;
 }
 #scrolly-side .scrolly > * {
   -webkit-box-flex: 1;
@@ -1282,7 +1278,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   #scrolly-side .scrolly article {
     z-index: 100;
     padding: 0;
-    width: 90vw;
+    width: 100%;
     max-width: 400px;
     margin: 0 auto;
     position: relative;
