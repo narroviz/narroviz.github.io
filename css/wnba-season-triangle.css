@@ -1211,6 +1211,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   -webkit-transition: background-color 250ms ease-in-out;
   -o-transition: background-color 250ms ease-in-out;
   transition: background-color 250ms ease-in-out;
+  transform: translate3d(0, 0, 200px);
 }
 #scrolly-side .scrolly article .step:last-of-type {
   margin-bottom: 0;
@@ -1266,6 +1267,8 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   bottom: 4rem;
   top: 4rem;
   left: 0;
+  transform: translate3d(0, 0, 10px);
+  z-index: 10;
 }
 @media (max-width: 10000px) {
   #scrolly-side .scrolly {
@@ -1297,6 +1300,7 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
   #scrolly-side .scrolly article .step {
     min-height: 100vh;
     margin-top: 30vh;
+    transform: translate3d(0, 0, 200px);
   }
   #scrolly-side .scrolly article .step:last-of-type {
     margin-bottom: 0;
@@ -1345,6 +1349,8 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
     margin: 0;
     top: 11vh;
     left: 0;
+    transform: translate3d(0, 0, 10px);
+    z-index: 10;
   }
 }
 .interactive-wrapper {
