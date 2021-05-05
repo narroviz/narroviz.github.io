@@ -8937,8 +8937,7 @@ function drawVoronoi(years, recordigamiData, xScale, yScale, dimensions, bounds,
 
   var voronoiDiagram = bounds.selectAll(".voronoi").data(voronoiMetadata).enter().append("path").attr("class", "voronoi").attr("d", function (d, i) {
     return voronoi.renderCell(i);
-  }) // .style("stroke", "salmon")
-  .on("mousemove", onMouseMove).on("mouseenter", onMouseEnter).on("mouseleave", onMouseLeave);
+  }).on("mousemove", onMouseMove).on("mouseenter", onMouseEnter).on("mouseleave", onMouseLeave);
 }
 
 function getVoronoi(points, dimensions) {
@@ -9228,7 +9227,7 @@ function _drawRecordigamiByTeam() {
   _drawRecordigamiByTeam = _asyncToGenerator(
   /*#__PURE__*/
   regeneratorRuntime.mark(function _callee3(league, filterTeam, recordigamiData, seasonData, teamData, wrapper, bounds, dimensions, tiles, tilesGroup, yearIntervals, xScale, yScale, suggestionDecade) {
-    var teamRecordigamiData, primaryColor, secondaryColor, recordigamiYears, basketballColors, basketballColorScale, basketballColorContinuousScale, grayColors, grayContinuousScale, intervals, decadeClasses, decadeHighlightColors, intervalFadeColors, legendFadeColors, decadeFadeColors, totalNumRecordigami, teamNumRecordigami, intervalGroups, _loop, i, k, j, onLogoMouseClick, orderedTeamHistory, teamParent, logoShift, logoSize, logoY, logoFontSize, logoX, logoX2, logoPadding, logoFade, logo, logoLabel, legendGroup, legendY, legendX, legendXPadding, legendFontSize, legendTileWidth, legendXRange, legendXScale, legendTiles, wnbaFillerTile, nbaFillerTile, legendLabels, legendFade, seasonFade, seasonSemiFade, filteredRecordigamiTiles, intervalStart, intervalEnd, isHighlighted, hoverPct, hoverFontSize, hoverFontSizeSmall, hoverGapY, hoverStartY, hoverY, hoverSquare, hoverStartingPointX, hoverWin, hoverHyphen, hoverLoss, hoverTeam, numRecordigamiDescription, numRecordigamiDescriptionBBox, numRecordigamiDescriptionBBoxWidth, numRecordigamiLabel, onLegendMouseClick, onRecordigamiMouseEnter, onRecordigamiMouseLeave, onRecordigamiMouseMove, gameYear, game, gameData, gameMetadata, voronoiDiagram, teamRecordigamiYears, container, stepSel;
+    var teamRecordigamiData, primaryColor, secondaryColor, recordigamiYears, basketballColors, basketballColorScale, basketballColorContinuousScale, grayColors, grayContinuousScale, intervals, decadeClasses, decadeHighlightColors, intervalFadeColors, legendFadeColors, decadeFadeColors, totalNumRecordigami, teamNumRecordigami, intervalGroups, _loop, i, k, j, onLogoMouseClick, orderedTeamHistory, teamParent, logoShift, logoSize, logoY, logoFontSize, logoX, logoX2, logoPadding, logoFade, logo, logoLabel, legendGroup, legendY, legendX, legendXPadding, legendFontSize, legendTileWidth, legendXRange, legendXScale, legendTiles, wnbaFillerTile, nbaFillerTile, legendLabels, legendFade, seasonFade, seasonSemiFade, filteredRecordigamiTiles, intervalStart, intervalEnd, isHighlighted, hoverPct, hoverFontSize, hoverFontSizeSmall, hoverGapY, hoverStartY, hoverY, hoverSquare, hoverStartingPointX, hoverWin, hoverHyphen, hoverLoss, hoverTeam, numRecordigamiDescription, numRecordigamiDescriptionBBox, numRecordigamiDescriptionBBoxWidth, numRecordigamiLabel, onLegendMouseClick, onRecordigamiMouseEnter, onRecordigamiMouseLeave, onRecordigamiMouseMove, gameYear, game, gameData, gameMetadata, voronoiDiagram, teamRecordigamiYears, _getVoronoiPointsAndM3, _getVoronoiPointsAndM4, duoPoints, duoMetadata, duoPaths, duoDiagram, _teamRecordigamiYears, container, stepSel;
 
     return regeneratorRuntime.wrap(function _callee3$(_context3) {
       while (1) {
@@ -9730,9 +9729,19 @@ function _drawRecordigamiByTeam() {
                   'primary_color': gameData.primary_color
                 }];
                 voronoiDiagram = bounds.selectAll(".voronoi").data(gameMetadata).enter().append("rect").attr("class", "voronoi").attr("x", 0).attr("width", dimensions.boundedWidth).attr("y", 0).attr("height", dimensions.boundedHeight).on("mousemove", onRecordigamiMouseMove).on("mouseenter", onRecordigamiMouseEnter).on("mouseleave", onRecordigamiMouseLeave);
-              } else if (teamNumRecordigami > 1) {
+              } else if (teamNumRecordigami === 2) {
+                bounds.selectAll(".voronoi").remove();
                 teamRecordigamiYears = Object.keys(teamRecordigamiData);
-                drawVoronoiWithRetry(teamRecordigamiYears, teamRecordigamiData, xScale, yScale, dimensions, bounds, onRecordigamiMouseEnter, onRecordigamiMouseLeave, onRecordigamiMouseMove);
+                _getVoronoiPointsAndM3 = getVoronoiPointsAndMetadata(teamRecordigamiYears, teamRecordigamiData, xScale, yScale, false), _getVoronoiPointsAndM4 = _slicedToArray(_getVoronoiPointsAndM3, 2), duoPoints = _getVoronoiPointsAndM4[0], duoMetadata = _getVoronoiPointsAndM4[1];
+                duoPaths = divideRectangularSVGRegionByTwoPoints(parseFloat(duoPoints[0][0]), parseFloat(duoPoints[1][0]), parseFloat(duoPoints[0][1]), parseFloat(duoPoints[1][1]), dimensions.boundedWidth, dimensions.boundedHeight);
+                duoMetadata[0]["path"] = duoPaths[0];
+                duoMetadata[1]["path"] = duoPaths[1];
+                duoDiagram = bounds.selectAll(".voronoi").data(duoMetadata).enter().append("path").attr("class", "voronoi").attr("d", function (d) {
+                  return d.path;
+                }).on("mousemove", onRecordigamiMouseMove).on("mouseenter", onRecordigamiMouseEnter).on("mouseleave", onRecordigamiMouseLeave);
+              } else if (teamNumRecordigami > 1) {
+                _teamRecordigamiYears = Object.keys(teamRecordigamiData);
+                drawVoronoiWithRetry(_teamRecordigamiYears, teamRecordigamiData, xScale, yScale, dimensions, bounds, onRecordigamiMouseEnter, onRecordigamiMouseLeave, onRecordigamiMouseMove);
               } else {
                 bounds.selectAll(".voronoi").remove();
               }
@@ -9768,6 +9777,149 @@ function _drawRecordigamiByTeam() {
     }, _callee3);
   }));
   return _drawRecordigamiByTeam.apply(this, arguments);
+}
+
+function divideRectangularSVGRegionByTwoPoints(x1, x2, y1, y2, svgWidth, svgHeight) {
+  var slope = -1 * (y1 - y2) / (x1 - x2);
+  var perpendicularSlope = -1 / slope; // const directionalMultiplier = perpendicularSlope > 0 ? 1 : 1
+
+  console.log(slope);
+  console.log(perpendicularSlope);
+  var xBisect = x1 + (x2 - x1) / 2;
+  var yBisect = y1 + (y2 - y1) / 2;
+  var bottomX = xBisect - (svgHeight - yBisect) / perpendicularSlope;
+  var bottomY = svgHeight;
+  var leftX = 0;
+  var leftY = yBisect + perpendicularSlope * xBisect;
+  var rightX = svgWidth;
+  var rightY = yBisect - (svgWidth - xBisect) * perpendicularSlope;
+  var topX = xBisect + yBisect / perpendicularSlope;
+  var topY = 0;
+  var dividingLinePoints = [];
+
+  if (topX >= 0 && topX <= svgWidth) {
+    dividingLinePoints.push({
+      'segment': 'top',
+      'x': topX,
+      'y': topY
+    });
+  }
+
+  if (rightY > 0 && rightY < svgHeight) {
+    dividingLinePoints.push({
+      'segment': 'right',
+      'x': rightX,
+      'y': rightY
+    });
+  }
+
+  if (bottomX >= 0 && bottomX <= svgWidth) {
+    dividingLinePoints.push({
+      'segment': 'bottom',
+      'x': bottomX,
+      'y': bottomY
+    });
+  }
+
+  if (leftY > 0 && leftY < svgHeight) {
+    dividingLinePoints.push({
+      'segment': 'left',
+      'x': leftX,
+      'y': leftY
+    });
+  }
+
+  console.log(dividingLinePoints);
+  var dividingPaths = getSVGDividingPaths(dividingLinePoints, svgWidth, svgHeight);
+  return dividingPaths;
+} // Clockwise from topLeft (the SVG origin)
+
+
+function getClockwiseSVGRectangleVertices(width, height) {
+  var topLeft = {
+    'x': 0,
+    'y': 0
+  };
+  var topRight = {
+    'x': width,
+    'y': 0
+  };
+  var bottomRight = {
+    'x': width,
+    'y': height
+  };
+  var bottomLeft = {
+    'x': 0,
+    'y': height
+  };
+  return [topLeft, topRight, bottomRight, bottomLeft];
+}
+
+function getEvenNumbersBetweenTwoInts(minNumber, maxNumber) {
+  var evenNumbers = [];
+
+  for (var i = Math.ceil((minNumber + 0.5) / 2) * 2; i < maxNumber; i += 2) {
+    evenNumbers.push(i);
+  }
+
+  return evenNumbers;
+}
+
+function getPathFromPoints(points) {
+  var path = '';
+
+  for (var i = 0; i < points.length; i++) {
+    var point = points[i];
+    var x = point.x;
+    var y = point.y;
+
+    if (i === 0) {
+      path += "M ".concat(x, " ").concat(y, " ");
+    }
+
+    path += "L ".concat(x, " ").concat(y, " ");
+  }
+
+  path += 'Z';
+  return path;
+}
+
+function getSVGDividingPaths(dividingLinePoints, width, height) {
+  var _getClockwiseSVGRecta = getClockwiseSVGRectangleVertices(width, height),
+      _getClockwiseSVGRecta2 = _slicedToArray(_getClockwiseSVGRecta, 4),
+      c1 = _getClockwiseSVGRecta2[0],
+      c2 = _getClockwiseSVGRecta2[1],
+      c3 = _getClockwiseSVGRecta2[2],
+      c4 = _getClockwiseSVGRecta2[3];
+
+  var clockwisePoints = [c1, 'top', c2, 'right', c3, 'bottom', c4, 'left'];
+  var firstPoint = dividingLinePoints[0];
+  var firstSegment = firstPoint['segment'];
+  var firstIndex = clockwisePoints.indexOf(firstSegment);
+  var secondPoint = dividingLinePoints[1];
+  var secondSegment = secondPoint['segment'];
+  var secondIndex = clockwisePoints.indexOf(secondSegment);
+  var pathVertexIndices = getEvenNumbersBetweenTwoInts(firstIndex, secondIndex);
+  var pathVertexPoints = pathVertexIndices.map(function (index) {
+    return clockwisePoints[index];
+  });
+  var pathPoints = [firstPoint].concat(pathVertexPoints).concat([secondPoint]);
+  var path = getPathFromPoints(pathPoints);
+  var complementaryVertexIndicesA = getEvenNumbersBetweenTwoInts(-1, firstIndex);
+  var complementaryVertexIndicesB = getEvenNumbersBetweenTwoInts(secondIndex, clockwisePoints.length);
+  var complementaryVertexPointsA = complementaryVertexIndicesA.map(function (index) {
+    return clockwisePoints[index];
+  });
+  var complementaryVertexPointsB = complementaryVertexIndicesB.map(function (index) {
+    return clockwisePoints[index];
+  });
+  var complementaryPathPoints = complementaryVertexPointsA.concat([firstPoint, secondPoint]).concat(complementaryVertexPointsB);
+  var complementaryPath = getPathFromPoints(complementaryPathPoints);
+  console.log(pathPoints);
+  console.log(path);
+  console.log(complementaryPathPoints);
+  console.log(complementaryPath);
+  return [path, complementaryPath];
 }
 
 function updateChart(_x17, _x18, _x19, _x20, _x21, _x22) {
