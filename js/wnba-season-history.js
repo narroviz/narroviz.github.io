@@ -8720,7 +8720,7 @@ function _setConfig() {
           case 0:
             if (league == 'WNBA') {
               START_YEAR = 1996;
-              END_YEAR = 2019;
+              END_YEAR = 2020;
               NUM_GAMES = 34;
               INTERVAL = 3;
               GAME_TICK_INTERVAL = 5;
