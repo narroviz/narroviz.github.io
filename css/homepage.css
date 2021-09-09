@@ -422,7 +422,7 @@ body, html {
 }
 
 
-.patreon {
+.buymeacoffee {
   display: block;
   margin-left: auto;
   margin-right: auto;  width: 54px;
@@ -431,7 +431,7 @@ body, html {
   justify-content: center;
 }
 
-.patreon:hover {
+.buymeacoffee:hover {
   color: #0274F9;
 }
 
@@ -852,7 +852,7 @@ header.is-sticky .header__menu .menu__links li {
     font-size: 24px;
   }
 }
-header.is-sticky .header__menu a.patreon-link {
+header.is-sticky .header__menu a.buymeacoffee-link {
   font-family: 'Avenir';
   font-weight: 700;
   text-transform: uppercase;
@@ -861,7 +861,7 @@ header.is-sticky .header__menu a.patreon-link {
   color: #2e4328;
   padding: 0.5em 0.75em;
 }
-header.is-sticky .header__menu a.patreon-link:hover {
+header.is-sticky .header__menu a.buymeacoffee-link:hover {
   opacity: 0.75;
 }
 header.is-sticky .menu__patrons ul {
@@ -1038,6 +1038,42 @@ header.is-sticky.is-dark .header__toggle.is-visible span svg {
 }
 
 .fund-button-desktop:hover a {
+  color: #11ded9;
+}
+
+.fund-button-header {  
+  position: fixed;
+  top: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-right: 10px;
+  /*position: absolute;*/
+
+  width: 30px;
+  height: 30px;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: all;
+  cursor: pointer;
+  border: none !important;
+  
+  text-align: center;
+  text-decoration: none;
+  
+  font-size: 20px;
+  font-weight: 500 !important;
+}
+
+.fund-button-header a {
+  color: #fff;
+}
+
+.fund-button-header:hover a {
   color: #11ded9;
 }
 
