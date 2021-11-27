@@ -8731,7 +8731,7 @@ function _setConfig() {
               YEAR_INTERVAL = 5;
             } else if (league == 'NBA') {
               START_YEAR = 1946;
-              END_YEAR = 2020;
+              END_YEAR = 2021;
               NUM_GAMES = 82;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 10;
