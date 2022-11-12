@@ -584,6 +584,9 @@ a:hover, a:focus {
     -webkit-box-shadow: 0 0 7px 2px #05e646;
           box-shadow: 0 0 7px 2px #05e646;
 }
+.col-md-4 {
+  width: min(300px, 100%) !important;
+}
 
 .grid-article {
   padding: 10px 0px;
@@ -598,6 +601,7 @@ a:hover, a:focus {
   text-align: center;
   align-items: center;
   justify-content: center;
+  width: min(300px, 100%) !important;
 }
 
 .article-item .hover-effect .hover-content {
