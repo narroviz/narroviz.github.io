@@ -668,6 +668,8 @@ input[type=text] {
   outline-width: 0;
   text-align: center;
   border-bottom: none;
+  box-shadow: none !important;
+  border-radius: 0px !important;
 }
 .typeahead.dropdown-menu,
 span.twitter-typeahead .tt-menu {
