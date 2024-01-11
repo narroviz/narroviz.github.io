@@ -8715,7 +8715,7 @@ function _setConfig() {
 
             if (league == WNBA) {
               START_YEAR = 1997;
-              END_YEAR = 2021;
+              END_YEAR = 2022;
               NUM_GAMES = 34;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 5;
@@ -8727,7 +8727,7 @@ function _setConfig() {
               FONT_SIZE = 10;
             } else if (league == NBA) {
               START_YEAR = 1946;
-              END_YEAR = 2022;
+              END_YEAR = 2023;
               NUM_GAMES = 82;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 10;
