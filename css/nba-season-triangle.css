@@ -1491,4 +1491,16 @@ span.twitter-typeahead .tt-suggestion.tt-cursor:hover {
 .fund-button-header:hover a {
   color: #11ded9;
 }
+text.legend-value {
+  font-size: 12px;
+  transform: translate(0px, 2px);
+}
+.team-logo-label {
+  font-size: 10px;
+  transform: translate(0px, 2px);
+}
+.season-label {
+  font-size: 10px;
+  font-weight: bold;
+}
 /*# sourceMappingURL=bundle.css.map */

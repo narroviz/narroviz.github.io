@@ -1648,4 +1648,9 @@ z-index 50 {
 .fund-button-header:hover a {
   color: #11ded9;
 }
+text[class^='decade-'] {
+  font-size: 12px;
+  margin-top: 4px;
+  transform: translate(0px, 2px);
+}
 /*# sourceMappingURL=bundle.css.map */
