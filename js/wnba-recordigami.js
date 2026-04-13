@@ -8717,8 +8717,8 @@ function _setConfig() {
 
             if (league == WNBA) {
               START_YEAR = 1997;
-              END_YEAR = 2024;
-              NUM_GAMES = 40;
+              END_YEAR = 2025;
+              NUM_GAMES = 44;
               INTERVAL = 3;
               GAME_TICK_INTERVAL = 5;
               DEFAULT_TEAM = "";
@@ -8729,7 +8729,7 @@ function _setConfig() {
               FONT_SIZE = 15;
             } else if (league == NBA) {
               START_YEAR = 1946;
-              END_YEAR = 2025;
+              END_YEAR = 2026;
               NUM_GAMES = 82;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 10;
