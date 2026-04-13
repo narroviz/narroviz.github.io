@@ -8715,8 +8715,8 @@ function _setConfig() {
 
             if (league == WNBA) {
               START_YEAR = 1997;
-              END_YEAR = 2024;
-              NUM_GAMES = 40;
+              END_YEAR = 2025;
+              NUM_GAMES = 44;
               INTERVAL = 10;
               GAME_TICK_INTERVAL = 5;
               DEFAULT_TEAM = "Washington Mystics";
